@@ -1,16 +1,14 @@
 import React from "react";
 import '../scss/main.scss';
+import Navigation from "./navigation";
+
 
 const Home = () => {
 
     return (
-        <section className='home' id='home'>
-            <div className='wrapper'>
-                <div className='home__container'>
-                    ssgsgsg
-                </div>
-            </div>
-        </section>
+        <>
+            <Navigation/>
+        </>
     )
 }
 

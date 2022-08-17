@@ -1,0 +1,82 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+
+.navigation {
+  margin-top: 46px;
+  height: 95px;
+
+
+
+  .wrapper {
+    display: flex;
+    padding-right: 15px;
+    padding-left: 15px;
+    justify-content: flex-end;
+
+  }
+
+  .navigation__container {
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+
+
+    .navigation__login{
+      display: flex;
+      margin-right: 152px;
+      justify-content: flex-end;
+      align-items: center;
+      height: 36px;
+      margin-bottom: 17px;
+    }
+
+    .navigation__login__login {
+      text-decoration: none;
+      padding-right: 20px;
+      font-size: 16px;
+      color: $color-four;
+
+    }
+
+    .navigation__login__register {
+      text-decoration: none;
+      font-size: 16px;
+      color: $color-four;
+    }
+
+  }
+
+  .navigation__section {
+    height: 42px;
+    display: flex;
+
+    input{
+      display: none;
+    }
+  }
+  .navigation__list__container {
+    display: flex;
+    align-items: center;
+    margin-right: 142px;
+
+    .list__item {
+      display: flex;
+      align-items: center;
+      font-size: 20px;
+      padding: 0 27.5px;
+      height: 42px;
+      transition: 2s;
+      color: $color-five;
+
+      &:hover{
+        border: 1px solid #3C3C3C;
+      }
+    }
+  }
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}

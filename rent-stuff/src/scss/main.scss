@@ -16,10 +16,11 @@ html, body {
 }
 
 .wrapper{
-  max-width: 1626px;
+  max-width: 1900px;
   width: 100%;
   margin: auto;
   display: flex;
 }
 
+@import "elements/navigation";
 
