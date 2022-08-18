@@ -1,0 +1,67 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+
+.mainSection {
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .mainSection_img {
+      position: absolute;
+      background-image: url("../../assets/Home-Hero-Image.jpg");
+      bottom: -270px;
+      left: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: right;
+      width: 885px;
+      height: 900px;
+    }
+  }
+
+  .mainSection__container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    margin-top: 210px;
+    margin-right: 275px;
+    align-items: center;
+
+    h1 {
+      font-size: 38px;
+      height: 107px;
+      display: flex;
+      text-align: center;
+
+    }
+
+
+    .decoration {
+      width: 253px;
+      height: 33px;
+      margin-top: 25px;
+      margin-bottom: 65px;
+    }
+
+    .button__container {
+      display: flex;
+
+
+      .big-btn {
+        display: flex;
+        width: 300px;
+        height: 120px;
+        justify-content: center;
+        align-items: center;
+        background-color: #FFFFFF;
+        font-size: 36px;
+        font-weight: 500;
+        color: #3C3C3C;
+      }
+    }
+  }
+}

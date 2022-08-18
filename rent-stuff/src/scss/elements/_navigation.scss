@@ -20,11 +20,11 @@
     font-size: 18px;
     display: flex;
     flex-direction: column;
-
+    z-index: 2;
 
     .navigation__login{
       display: flex;
-      margin-right: 152px;
+      margin-right: 142px;
       justify-content: flex-end;
       align-items: center;
       height: 36px;
@@ -33,16 +33,30 @@
 
     .navigation__login__login {
       text-decoration: none;
-      padding-right: 20px;
+      padding: 10px 9px;
       font-size: 16px;
       color: $color-four;
-
+      transition: 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+        border: 1px solid #FAD648;
+      }
     }
 
     .navigation__login__register {
       text-decoration: none;
+      padding: 10px 9px;
       font-size: 16px;
       color: $color-four;
+      transition: 2s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      &:hover{
+        border: 1px solid #FAD648;
+      }
     }
 
   }
@@ -58,7 +72,7 @@
   .navigation__list__container {
     display: flex;
     align-items: center;
-    margin-right: 142px;
+    margin-right: 122px;
 
     .list__item {
       display: flex;
