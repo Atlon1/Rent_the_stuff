@@ -1,0 +1,83 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+
+.three__column {
+  margin-top: 200px;
+
+  .wrapper {
+
+  }
+
+  .three__column__container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    width: 1900px;
+    height: 384px;
+
+  }
+
+  .three__column__background {
+    z-index: -1;
+    position: absolute;
+  }
+
+  .three__column__description {
+    z-index: 1;
+    display: flex;
+    align-items: center;
+
+  }
+
+  .three__column__firstCont {
+    width: 334px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 163px;
+  }
+
+  .three__column__secCont {
+    width: 334px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0 286px;
+  }
+
+  .three__column__thirdCont {
+    width: 334px;
+    height: 252px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 163px;
+  }
+}
+
+h2 {
+  font-size: 90px;
+  color: $color-sec;
+  font-weight: 100;
+}
+
+h3 {
+  font-size: 18px;
+  color: $color-five;
+  font-weight: 600;
+  margin-bottom: 28px;
+  margin-top: 20px;
+}
+
+.three__column__text {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 25px;
+}
