@@ -1,6 +1,7 @@
 import React from "react";
 import '../scss/main.scss';
 import {Link} from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 const Navigation   = () => {
 
@@ -27,7 +28,7 @@ const Navigation   = () => {
                             </li>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link to='/Login'>O co chodzi?</Link>
+                                    <HashLink smooth to={'#simpleSteps'}>O co chodzi?</HashLink>
                                 </div>
                             </li>
                             <li className='list__item'>

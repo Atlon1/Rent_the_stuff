@@ -10,7 +10,7 @@ import {Link} from "react-router-dom";
 const SimpleSteps = () => {
 
     return (
-        <section className='simpleSteps'>
+        <section className='simpleSteps' id='simpleSteps'>
             <div className='wrapper'>
                 <div className='simpleSteps__container'>
                     <h4>Wystarczą 4 proste kroki</h4>
