@@ -3,6 +3,7 @@ import '../scss/main.scss';
 import Navigation from "./navigation";
 import MainSection from "./MainSection";
 import ThreeColumn from "./ThreeColumn";
+import SimpleSteps from "./SimpleSteps";
 
 const Home = () => {
 
@@ -11,6 +12,7 @@ const Home = () => {
             <Navigation/>
             <MainSection/>
             <ThreeColumn/>
+            <SimpleSteps/>
         </>
     )
 }
