@@ -1,0 +1,188 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.simpleSteps {
+  margin-top: 55px;
+
+  .wrapper {
+
+  }
+
+  .simpleSteps__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h4 {
+      font-size: 38px;
+      color: $color-five;
+    }
+  }
+
+  .simpleSteps__decoration {
+    margin-top: 25px;
+    margin-bottom: 34px;
+  }
+}
+
+.simpleSteps__content {
+  display: flex;
+  width: 100%;
+  height: 325px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #F0F1F1;
+
+  .simpleSteps__firstContent {
+    margin-left: 414px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 132px;
+
+    .simpleSteps__icon1 {
+      width: 83px;
+      height: 83px;
+    }
+
+    .simpleSteps__header {
+      font-size: 18px;
+      margin-top: 8px;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: 16px;
+    }
+  }
+
+  .simpleSteps__secContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 134px;
+
+    .simpleSteps__icon2 {
+      width: 83px;
+      height: 83px;
+    }
+
+    .simpleSteps__header {
+      font-size: 18px;
+      margin-top: 8px;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: 16px;
+    }
+  }
+
+  .simpleSteps__thirdContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 130px;
+
+    .simpleSteps__icon3 {
+      width: 83px;
+      height: 83px;
+    }
+
+    .simpleSteps__header {
+      font-size: 18px;
+      margin-top: 8px;
+      text-align: center;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: 16px;
+    }
+  }
+
+  .simpleSteps__fourContent {
+    margin-right: 414px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 164px;
+
+    .simpleSteps__icon4 {
+      width: 83px;
+      height: 83px;
+    }
+
+    .simpleSteps__header {
+      font-size: 18px;
+      margin-top: 8px;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: 16px;
+    }
+  }
+}
+.big-btn {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  width: 300px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  font-size: 36px;
+  color: #3C3C3C;
+  font-weight: 100;
+  margin-top: 35px;
+  margin-bottom: 80px;
+}
