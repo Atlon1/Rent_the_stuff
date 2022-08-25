@@ -1,0 +1,54 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+
+.aboutUs {
+
+  .wrapper {
+
+  }
+
+  &__container {
+    display: flex;
+    width: 1900px;
+    height: 935px;
+  }
+
+  &__content {
+    background-color: #F0F1F1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 958px;
+    position: relative;
+  }
+
+  h5 {
+    font-size: 38px;
+    margin-bottom: 26px;
+    font-weight: 400;
+  }
+
+  &__decoration {
+    margin-bottom: 55px;
+  }
+
+  &__text {
+    font-size: 25px;
+    width: 550px;
+    height: 209px;
+    text-align: center;
+    line-height: 45px;
+  }
+
+  &__signature {
+    position: absolute;
+    top: 650px;
+    right: 220px;
+  }
+
+  &__people {
+    width: 942px;
+  }
+}
