@@ -7,8 +7,10 @@ import SimpleSteps from "./SimpleSteps";
 import AboutUs from "./AboutUs";
 import WhoHelp from "./WhoHelp";
 
-const Home = () => {
 
+
+
+export default function Home() {
     return (
         <>
             <Navigation/>
@@ -19,6 +21,4 @@ const Home = () => {
             <WhoHelp/>
         </>
     )
-}
-
-export default Home;
+};

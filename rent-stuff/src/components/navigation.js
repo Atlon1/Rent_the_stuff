@@ -10,8 +10,8 @@ const Navigation   = () => {
             <div className='wrapper'>
                 <div className='navigation__container'>
                     <div className='navigation__login'>
-                        <Link className='navigation__login__login' to="Login"> Zaloguj</Link>
-                        <Link className='navigation__login__register' to="Register"> Załóż konto</Link>
+                        <Link className='navigation__login__login' to="/Login"> Zaloguj</Link>
+                        <Link className='navigation__login__register' to="/Register"> Załóż konto</Link>
                     </div>
                     <div className='navigation__section'>
                         <input type='checkbox' className='menu__btn' id="menu__btn"/>
