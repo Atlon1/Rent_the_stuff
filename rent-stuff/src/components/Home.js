@@ -5,6 +5,7 @@ import MainSection from "./MainSection";
 import ThreeColumn from "./ThreeColumn";
 import SimpleSteps from "./SimpleSteps";
 import AboutUs from "./AboutUs";
+import WhoHelp from "./WhoHelp";
 
 const Home = () => {
 
@@ -15,6 +16,7 @@ const Home = () => {
             <ThreeColumn/>
             <SimpleSteps/>
             <AboutUs/>
+            <WhoHelp/>
         </>
     )
 }
