@@ -38,7 +38,7 @@ const Navigation   = () => {
                             </li>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link to='/Login'>Fundacja i organizacje</Link>
+                                    <HashLink smooth to={'#whoHelp'}>Fundacja i organizacje</HashLink>
                                 </div>
                             </li>
                             <li className='list__item'>
