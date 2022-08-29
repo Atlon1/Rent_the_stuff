@@ -1,12 +1,27 @@
-import React from "react";
+import React, {useState} from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg'
-import {Link, Route, Routes, Switch} from "react-router-dom";
 import Fundation from "./Pagination/Fundation";
+import Organization from "./Pagination/Organization";
+import Local from "./Pagination/Local";
 
 
 
 const WhoHelp = () => {
+
+    const [currentComponent, setCurrentComponent] = useState(<Fundation/>)
+
+    const handleClickFundation = () => {
+        setCurrentComponent(<Fundation/>)
+    }
+
+    const handleClikcOrganization = () => {
+        setCurrentComponent(<Organization/>)
+    }
+
+    const handleClickLocal = () =>{
+        setCurrentComponent(<Local/>)
+    }
 
     return (
         <section className='whoHelp' id='whoHelp'>
@@ -15,14 +30,11 @@ const WhoHelp = () => {
                     <h6>Komu Pomagamy?</h6>
                     <img src={decoration} className='whoHelp__decoration'/>
                     <div className='whoHelp__diffrence'>
-                        <Link className="pagination-btn" to="/Fundation">Fundacje</Link>
-                        <Link className="pagination-btn" to="/Organization">Organizacja<br/>pozarządowym</Link>
-                        <Link className="pagination-btn" to="/Local">Lokalnym<br/>zbiórka</Link>
+                        <div className="pagination-btn" onClick={handleClickFundation}>Fundacje</div>
+                        <div className="pagination-btn" onClick={handleClikcOrganization}>Organizacja<br/>pozarządowym</div>
+                        <div className="pagination-btn" onClick={handleClickLocal}>Lokalnym<br/>zbiórka</div>
                     </div>
-                    <div className='whoHelp__text'>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
-                        współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
-                    </div>
-                    <Fundation/>
+                    {currentComponent}
                 </div>
             </div>
         </section>

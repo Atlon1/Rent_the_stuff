@@ -31,7 +31,9 @@ const Fundation = () => {
 
     return (
         <>
-
+            <div className='whoHelp__text'>W naszej bazie znajdziesz listę zweryfikowanych Fundacji, z którymi
+                współpracujemy. Możesz sprawdzić czym się zajmują, komu pomagają i czego potrzebują.
+            </div>
             <div className='whoHelp__organiation__container'>
                 {displayOrganization}
             </div>

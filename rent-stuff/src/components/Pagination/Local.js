@@ -31,7 +31,9 @@ const Local = () => {
 
     return (
         <>
-
+            <div className='whoHelp__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+            </div>
             <div className='whoHelp__organiation__container'>
                 {displayOrganization}
             </div>
@@ -40,7 +42,7 @@ const Local = () => {
                 nextLabel={"Next"}
                 pageCount={pageCount}
                 onPageChange={changePage}
-                containerClassName={"paginationBttns"}
+                containerClassName={"paginationBttns__local"}
                 previousLinkClassName={"previousBttn"}
                 nextClassName={"nextBttn"}
                 disabledClassName={"paginationDisable"}

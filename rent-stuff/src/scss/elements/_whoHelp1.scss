@@ -49,6 +49,7 @@
     color: #3C3C3C;
     font-weight: 400;
     text-align: center;
+    cursor: pointer;
     &:hover {
       border: 1px solid $color-four;
     }
@@ -132,4 +133,7 @@
     border: 1px solid black;
   }
 
+  .paginationBttns__local{
+    display: none;
+  }
 }
