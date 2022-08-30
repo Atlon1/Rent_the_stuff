@@ -50,6 +50,7 @@
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+
     &:hover {
       border: 1px solid $color-four;
     }
@@ -70,8 +71,10 @@
     width: 100%;
 
   }
-
-
+  &__local__container{
+    width: 100%;
+    margin-bottom: 130px;
+  }
   &__organiation__content {
     height: 80px;
     display: flex;
@@ -79,10 +82,11 @@
     position: relative;
     margin-bottom: 34px;
 
-    &:nth-child(1){
+    &:nth-child(1) {
       border-bottom: 2px solid silver;
     }
-    &:nth-child(2){
+
+    &:nth-child(2) {
       border-bottom: 2px solid silver;
     }
   }
@@ -113,11 +117,13 @@
     height: 50px;
     justify-content: space-between;
   }
+
   .paginationBttns a {
     cursor: pointer;
     padding: 10px;
     margin: 0 10px;
-    &:hover{
+
+    &:hover {
       border: 1px solid black;
     }
   }
@@ -125,15 +131,16 @@
   .previousBttn {
     display: none;
   }
+
   .nextBttn {
     display: none;
   }
 
-  .paginationActive a{
+  .paginationActive a {
     border: 1px solid black;
   }
 
-  .paginationBttns__local{
+  .paginationBttns__local {
     display: none;
   }
 }

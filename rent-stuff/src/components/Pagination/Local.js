@@ -34,7 +34,7 @@ const Local = () => {
             <div className='whoHelp__text'>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
                 tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
             </div>
-            <div className='whoHelp__organiation__container'>
+            <div className='whoHelp__local__container'>
                 {displayOrganization}
             </div>
             <ReactPaginate
