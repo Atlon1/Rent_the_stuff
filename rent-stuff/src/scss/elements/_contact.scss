@@ -1,0 +1,117 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+
+.contact {
+ height: 1026px;
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  &__container {
+    position: relative;
+    display: flex;
+    z-index: 1;
+  }
+
+  &__background {
+    width: 100%;
+    height: 1026px;
+  position: absolute;
+  opacity: 50%;
+    background: url("../../assets/Background-Contact-Form.jpg")  no-repeat;
+    z-index: -1;
+
+  }
+
+  &__content{
+    position: relative;
+    margin-top: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 142px;
+    margin-left: auto;
+    align-items: center;
+    width: 520px;
+  }
+  h7 {
+    font-size: 38px;
+  }
+
+  &__decoration {
+    margin-top: 25px;
+    width: 253px;
+    height: 33px;
+    margin-bottom: 70px;
+  }
+  &__formCont {
+    display: flex;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 62px;
+    margin: 8px;
+    border-bottom: 1px solid black;
+    background: none;
+
+  }
+  &__textarea {
+    margin: 20px 8px 0 8px;
+    border-bottom: 1px solid black;
+
+  }
+
+  label{
+    font-size: 16px;
+    font-weight: 700;
+  }
+
+  input {
+    margin-top: 12px;
+    font-size: 18px;
+    border: 0;
+    opacity: 40%;
+
+  }
+
+  textarea {
+    margin-top: 15px;
+    width: 100%;
+    height: 106px;
+    font-size: 15px;
+    text-align: left;
+    border: 0;
+    opacity: 40%;
+  }
+
+  &__submit {
+    width: 150px;
+    height: 50px;
+    border: 0.75px solid $color-five;
+    margin-top: 44px;
+    margin-right: 205px;
+    margin-left: 100%;
+    background-color: white;
+
+  }
+
+  &__fotter {
+    z-index: 1;
+    display: flex;
+    margin-top: 273px;
+    align-items: center;
+    justify-content: center;
+  }
+  &__fbIN{
+    position: relative;
+    left: 587px;
+  }
+  &__facebook {
+    margin-right: 20px;
+  }
+
+}

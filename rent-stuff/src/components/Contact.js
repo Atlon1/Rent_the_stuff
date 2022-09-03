@@ -11,28 +11,34 @@ const Contact = () => {
         <section className='contact' id='contact'>
             <div className='wrapper'>
                 <div className='contact__container'>
-                    <img src={background} className='contact_background'/>
+                    <div className='contact__background'/>
                     <div className='contact__content'>
                         <h7>Skontaktuj się z nami</h7>
-                        <img src={decoration} className='contact__decoration'/>
-                        <div className='contact__inputCont'>
-                            <div className='contact__firstCont'>
-                                <div className='contact__firstCont__text'>Wpisz swoje imię</div>
-                                <input className='contact__firstCont__name' type={"text"}/>
+                        <img src={decoration} className='contact__decoration' alt='decoration'/>
+                        <form className='contact__inputCont'>
+                            <div className='contact__formCont'>
+                                <div className='contact__input'>
+                                    <label>Wpisz sowje imię</label><input placeholder="Maciej"/>
+                                </div>
+                                <div className='contact__input'>
+                                    <label>Wpisz swój email</label><input placeholder="abc@yx.pl"/>
+                                </div>
                             </div>
-                            <div className='contact__SecCont'>
-                                <div className='contact__SecCont__text'>Wpisz swoj email</div>
-                                <input className='contact__SectCont__name' type={"text"}/>
+                            <div className='contact__textarea'>
+                                <label>Wpisz swoją wiadomość</label>
+                                <textarea
+                                    placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."/>
                             </div>
-                            <div className='contact__SecCont__text'>Wpisz swoja wiadomość</div>
-                            <input className='contact__textarea' type={'textarea'}/>
-                        </div>
+                        </form>
+                        <button className='contact__submit'>Wyślij</button>
                     </div>
                 </div>
                 <div className='contact__fotter'>
                     <div className='contact__copywrite'>Copyright by Atlon</div>
-                    <img src={facebook} className='contact__facebook'/>
-                    <img src={instagram} className='contact__instagram'/>
+                    <div className='contact__fbIN'>
+                    <img src={facebook} className='contact__facebook' alt='facebook'/>
+                    <img src={instagram} className='contact__instagram' alt='instagram'/>
+                </div>
                 </div>
             </div>
         </section>

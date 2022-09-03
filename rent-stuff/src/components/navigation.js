@@ -43,7 +43,7 @@ const Navigation   = () => {
                             </li>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link to='/Login'>Kontakt</Link>
+                                    <HashLink smooth to={'#contact'}>Kontakt</HashLink>
                                 </div>
                             </li>
                         </ul>
