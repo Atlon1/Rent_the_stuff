@@ -53,6 +53,7 @@ const Contact = () => {
         })
     }
 
+    const API = "https://fer-api.coderslab.pl/v1/portfolio/contact"
 
     const handleSubmit = async (e) => {
         e.preventDefault()
@@ -73,6 +74,22 @@ const Contact = () => {
             return
         }
         console.log('form submited', form)
+
+        fetch(`${API}`,{
+            method: "POST",
+            body: JSON.stringify(form),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+            .then(response => response.json())
+            .then(form => {
+                console.log(form)
+            })
+            .catch(erorr => {
+                console.log(erorr)
+            })
+
         return setAgree(
             <div className="Form_validate"
                  style={
@@ -168,6 +185,12 @@ const Contact = () => {
                                     marginLeft: '8px'
                                 }
                             }>{textErr}</div>
+                            <div style={
+                                {
+                                    marginTop: '15px',
+                                    marginLeft: '8px'
+                                }
+                            }>Obecna ilość znaków to: {form.text.length}</div>
                         </form>
                         <button className='contact__submit' onClick={handleSubmit}>Wyślij</button>
                     </div>
