@@ -2,7 +2,7 @@
 @import "../settings/mixins";
 @import "../settings/colors";
 
-.register {
+.wylogowano {
 
   .wrapper {
     justify-content: center;
@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    text-align: center;
+    width: 450px;
   }
 
   &__title {
@@ -27,44 +29,14 @@
 
   }
 
-  &__form {
-    width: 384.5px;
-    height: 385px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #F0F1F1;
-    margin-bottom: 40px;
-  }
-
-  &__email {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    height: 62px;
-    font-size: 16px;
-    color: #3C3C3C;
-    font-weight: 700;
-    margin-top: 25px;
-    margin-bottom: 25px;
-  }
-  input{
-    background-color: #F0F1F1;
-    border: 0;
-    margin-top: 15px;
-    font-size: 16px;
-  }
-
-
   &__register {
     width: 500px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 
   &__btn {
-    width: 117px;
+    width: 125px;
     height: 50px;
     background-color: white;
     border: none;

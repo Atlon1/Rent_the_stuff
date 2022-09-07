@@ -1,9 +1,9 @@
 import React from "react";
 import {BrowserRouter, Routes, Route} from "react-router-dom";
-import Home from "./components/Home";
-import Login from "./components/Login";
-import Register from "./components/Register";
-
+import Home from "./Router/Home";
+import Login from "./Router/Login";
+import Register from "./Router/Register";
+import Wylogowano from './Router/Wylogowano'
 
 
 export default function App () {
@@ -13,6 +13,7 @@ export default function App () {
                 <Route path='/' element={<Home/>}/>
                 <Route path='Login' element={<Login/>}/>
                 <Route path='Register' element={<Register/>}/>
+                <Route path='Wylogowano' element={<Wylogowano/>}/>
             </Routes>
       </BrowserRouter>
   )
