@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useState}  from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import {Link} from "react-router-dom";
 
-const LoginSection = () => {
+
+const RegisterSection = () => {
 
     const validateEmail = form => {
         if (!form.email){
@@ -23,12 +24,26 @@ const LoginSection = () => {
         return null
     }
 
+    const validateRePassword = form => {
+        if (!form.password){
+            return "Podane hasło jest nie prawidłowe!"
+        } else if (form.password.length < 2){
+            return "Podane hasło jest za krótkie!"
+        }
+        if (form.rePassword !== form.password){
+            return 'Hasła nie są identyczne'
+        }
+        return null
+    }
+
     const [emailErr, setEmailErr] = useState(null);
     const [passwordErr, setPasswordErr] = useState(null);
+    const [passwordReErr, setPasswordReErr] = useState(null);
     const [borderColor, setBorderColor] = useState('1px solid black');
     const [form, setForm] = useState({
         email: '',
-        password: ''
+        password: '',
+        rePassword:''
     })
 
     const updateField = e => {
@@ -49,32 +64,37 @@ const LoginSection = () => {
         if (passError) {
             setPasswordErr(passError)
             setBorderColor('1px solid red')
+        }
+        const passReError = validateRePassword(form)
+        if(passReError) {
+            setPasswordReErr(passReError)
+            setBorderColor('1px solid red')
             return
         }
         console.log('form submited', form)
     }
 
     return (
-        <section className='login'>
+        <section className='register'>
             <div className='wrapper'>
-                <div className='login__container'>
-                    <div className='login__title'>Zaloguj się</div>
-                     <img src={decoration} className='login__decoration' alt='decoration'/>
-                    <form className='login__form'>
-                        <div className='login__email'
+                <div className='register__container'>
+                    <div className='register__title'>Załóż konto</div>
+                    <img src={decoration} className='register__decoration' alt='decoration'/>
+                    <form className='register__form'>
+                        <div className='register__email'
                              style={
                                  {
                                      borderBottom: borderColor
                                  }
                              }>
-                        <label>Email</label>
-                        <input
-                            type={"email"}
-                            name={'email'}
-                            onChange={updateField}
+                            <label>Email</label>
+                            <input
+                                type={"email"}
+                                name={'email'}
+                                onChange={updateField}
 
-                        />
-                            <div className='login__error' style={
+                            />
+                            <div className='register__error' style={
                                 {
                                     color: 'red',
                                     fontSize: '10px',
@@ -83,7 +103,7 @@ const LoginSection = () => {
                                 }
                             }>{emailErr}</div>
                         </div>
-                        <div className='login__email'
+                        <div className='register__email'
                              style={
                                  {
                                      borderBottom: borderColor
@@ -95,7 +115,7 @@ const LoginSection = () => {
                                 name={'password'}
                                 onChange={updateField}
                             />
-                            <div className='login__error' style={
+                            <div className='register__error' style={
                                 {
                                     color: 'red',
                                     fontSize: '10px',
@@ -103,11 +123,34 @@ const LoginSection = () => {
                                     marginTop: '15px'
                                 }
                             }>{passwordErr}</div>
+
+
+                        </div>
+                        <div className='register__email'
+                             style={
+                                 {
+                                     borderBottom: borderColor
+                                 }
+                             }>
+                            <label>Powtórz Hasło</label>
+                            <input
+                                type={"password"}
+                                name={'rePassword'}
+                                onChange={updateField}
+                            />
+                            <div className='register__error' style={
+                                {
+                                    color: 'red',
+                                    fontSize: '10px',
+                                    fontWeight: '700',
+                                    marginTop: '15px'
+                                }
+                            }>{passwordReErr}</div>
                         </div>
                     </form>
-                    <div className='login__register'>
-                        <button className='login__btn'><Link to="/Register">Załóż konto</Link></button>
-                        <button className='login__btn' onClick={handleSubmit}>Zaloguj się</button>
+                    <div className='register__register'>
+                        <button className='register__btn'><Link to="/Login">Zaloguj się</Link></button>
+                        <button className='register__btn' onClick={handleSubmit}>Załóż konto</button>
                     </div>
                 </div>
             </div>
@@ -115,4 +158,4 @@ const LoginSection = () => {
     )
 }
 
-export default LoginSection;
+export default RegisterSection;

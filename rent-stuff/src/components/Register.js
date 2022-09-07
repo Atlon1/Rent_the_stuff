@@ -1,14 +1,16 @@
 import React from "react";
 import '../scss/main.scss';
+import Navigation from "./navigation";
+import RegisterSection from "./RegisterSection";
 
-const Register = () => {
 
+
+
+export default function Register() {
     return (
         <>
-            <div>Założ konto luju</div>
+            <Navigation/>
+            <RegisterSection/>
         </>
     )
-}
-
-
-export default Register;
+};
