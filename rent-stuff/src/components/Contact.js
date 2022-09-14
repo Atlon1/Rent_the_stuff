@@ -113,7 +113,7 @@ const Contact = () => {
                 <div className='contact__container'>
                     <div className='contact__background'/>
                     <div className='contact__content'>
-                        <h7>Skontaktuj się z nami</h7>
+                        <h6>Skontaktuj się z nami</h6>
                         <img src={decoration} className='contact__decoration' alt='decoration'/>
                         {agree}
                         <form className='contact__inputCont'>
