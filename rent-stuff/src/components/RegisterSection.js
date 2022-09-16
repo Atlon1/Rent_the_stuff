@@ -2,6 +2,9 @@ import React, {useState}  from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import {Link} from "react-router-dom";
+import {createUserWithEmailAndPassword} from "firebase/auth"
+import {useNavigate} from 'react-router-dom'
+import {auth} from "../Firebase";
 
 
 const RegisterSection = () => {
@@ -45,6 +48,7 @@ const RegisterSection = () => {
         password: '',
         rePassword:''
     })
+    const navigate = useNavigate();
 
     const updateField = e => {
         setForm({
@@ -71,6 +75,9 @@ const RegisterSection = () => {
             setBorderColor('1px solid red')
             return
         }
+        createUserWithEmailAndPassword(auth, form.email, form.password)
+            .then((auth)=>{navigate('/LogInHome')})
+            .catch(error=>console.error(error))
         console.log('form submited', form)
     }
 

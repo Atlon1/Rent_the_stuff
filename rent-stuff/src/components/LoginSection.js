@@ -2,6 +2,9 @@ import React, {useState} from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import {Link} from "react-router-dom";
+import {auth} from "../Firebase";
+import {useNavigate} from 'react-router-dom'
+import {signInWithEmailAndPassword} from "firebase/auth";
 
 const LoginSection = () => {
 
@@ -30,12 +33,14 @@ const LoginSection = () => {
         email: '',
         password: ''
     })
+    const navigate = useNavigate();
 
     const updateField = e => {
         setForm({
             ...form,
             [e.target.name]: e.target.value
         })
+
     }
 
     const handleSubmit = async (e) =>{
@@ -51,8 +56,12 @@ const LoginSection = () => {
             setBorderColor('1px solid red')
             return
         }
-        console.log('form submited', form)
+        signInWithEmailAndPassword(auth, form.email, form.password)
+            .then((auth)=>{navigate('/LogInHome')})
+            .catch(error=>console.error(error))
+        console.log('form submited')
     }
+
 
     return (
         <section className='login'>
