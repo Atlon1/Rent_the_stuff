@@ -1,12 +1,13 @@
 import React from "react";
 import '../scss/main.scss';
 import NavigationLoginIn from "../components/logeedComponents/NavigationLoginIn";
-import MainSection from "../components/MainSection";
+import MainSectionLogged from "../components/logeedComponents/MainSectionLogged";
 import ThreeColumn from "../components/ThreeColumn";
-import SimpleSteps from "../components/SimpleSteps";
+import SimpleStepsLogged from "../components/logeedComponents/SimpleStepsLogged";
 import AboutUs from "../components/AboutUs";
 import WhoHelp from "../components/WhoHelp";
 import Contact from "../components/Contact";
+
 
 
 
@@ -16,9 +17,9 @@ export default function UserLoginInHome() {
     return (
         <>
             <NavigationLoginIn/>
-            <MainSection/>
+            <MainSectionLogged/>
             <ThreeColumn/>
-            <SimpleSteps/>
+            <SimpleStepsLogged/>
             <AboutUs/>
             <WhoHelp/>
             <Contact/>

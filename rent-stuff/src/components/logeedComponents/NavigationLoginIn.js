@@ -44,7 +44,7 @@ const NavigationLoginIn = () => {
                         <ul className='navigation__list__container'>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link to='/UserLoginInHome/FormSection'>Start</Link>
+                                    <Link to='/UserLoginInHome'>Start</Link>
                                 </div>
                             </li>
                             <li className='list__item'>
