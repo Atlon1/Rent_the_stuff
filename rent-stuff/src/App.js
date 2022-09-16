@@ -4,7 +4,9 @@ import Home from "./Router/Home";
 import Login from "./Router/Login";
 import Register from "./Router/Register";
 import Wylogowano from './Router/Wylogowano';
-import LogInHome from "./components/LogInHome";
+import UserLoginInHome from "./Router/UserLoginInHome";
+import FormSectionLogged from "./Router/FormSectionLogged";
+
 
 
 export default function App () {
@@ -14,8 +16,9 @@ export default function App () {
                 <Route path='/' element={<Home/>}/>
                 <Route path='/Login' element={<Login/>}/>
                 <Route path='/Register' element={<Register/>}/>
-                <Route path='/LogInHome/Wylogowano' element={<Wylogowano/>}/>
-                <Route path='/LogInHome' element={<LogInHome/>}/>
+                <Route path='/UserLoginInHome' element={<UserLoginInHome/>}/>
+                <Route path='/Wylogowano' element={<Wylogowano/>}/>
+                <Route path='/UserLoginInHome/FormSection' element={<FormSectionLogged/>}/>
             </Routes>
       </BrowserRouter>
   )

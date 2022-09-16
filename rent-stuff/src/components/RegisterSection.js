@@ -76,7 +76,7 @@ const RegisterSection = () => {
             return
         }
         createUserWithEmailAndPassword(auth, form.email, form.password)
-            .then((auth)=>{navigate('/LogInHome')})
+            .then((auth)=>{navigate('/UserLoginInHome')})
             .catch(error=>console.error(error))
         console.log('form submited', form)
     }

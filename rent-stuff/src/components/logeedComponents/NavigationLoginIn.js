@@ -1,17 +1,38 @@
 import React from "react";
-import '../scss/main.scss';
+import '../../scss/main.scss';
 import {Link} from "react-router-dom";
-import { HashLink } from 'react-router-hash-link';
+import {HashLink} from 'react-router-hash-link';
+import {auth} from "../../Firebase";
+import {useNavigate} from "react-router-dom";
+import {useAuthState} from "react-firebase-hooks/auth";
 
-const Navigation   = () => {
+
+const NavigationLoginIn = () => {
+
+    const navigate = useNavigate();
+    const [user, loading, error] = useAuthState(auth);
+    const signOutClick = () => {
+        auth.signOut();
+        navigate('/Wylogowano')
+    }
 
     return (
         <section className='navigation' id='navigation'>
             <div className='wrapper'>
                 <div className='navigation__container'>
                     <div className='navigation__login'>
-                        <Link className='navigation__login__login' to="/Login"> Zaloguj</Link>
-                        <Link className='navigation__login__register' to="/Register"> Załóż konto</Link>
+                        <div className='navigation__login__login' style={
+                            {
+                                fontWeight: '700'
+                            }
+                        }>Cześć! {user.email}</div>
+
+                        <Link className='navigation__login__login' style={
+                            {
+                                fontWeight: '700'
+                            }
+                        } to="/UserLoginInHome/FormSection"> Oddaj rzeczy</Link>
+                        <button className='navigation__login__register' onClick={() => signOutClick()}>Wyloguj</button>
                     </div>
                     <div className='navigation__section'>
                         <input type='checkbox' className='menu__btn' id="menu__btn"/>
@@ -23,7 +44,7 @@ const Navigation   = () => {
                         <ul className='navigation__list__container'>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link to='/'>Start</Link>
+                                    <Link to='/UserLoginInHome/FormSection'>Start</Link>
                                 </div>
                             </li>
                             <li className='list__item'>
@@ -54,4 +75,4 @@ const Navigation   = () => {
     )
 }
 
-export default Navigation;
+export default NavigationLoginIn;
