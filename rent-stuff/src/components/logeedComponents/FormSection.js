@@ -4,9 +4,11 @@ import '../../scss/main.scss';
 const FormSection = () => {
 
     return(
-        <>
-        <div>Przykładowy formularz</div>
-        </>
+        <section className='from'>
+            <div className="wrapper">
+                <div>Przykładowy formularz</div>
+            </div>
+        </section>
     )
 }
 
