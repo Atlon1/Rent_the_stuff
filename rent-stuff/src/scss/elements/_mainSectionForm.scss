@@ -3,14 +3,14 @@
 @import "../settings/colors";
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
 
-.mainSection {
+.mainSectionForm {
 
   .wrapper {
     display: flex;
     justify-content: flex-end;
     position: relative;
 
-    .mainSection_img {
+    .mainSection_imgForm {
       position: absolute;
       background-image: url("../../assets/Home-Hero-Image.jpg");
       bottom: -200px;
@@ -23,7 +23,7 @@
     }
   }
 
-  .mainSection__container {
+  .mainSection__containerForm {
     position: relative;
     display: flex;
     flex-direction: column;
@@ -46,12 +46,12 @@
       margin-bottom: 65px;
     }
   }
-  .button__container {
+  .button__containerForm {
     display: flex;
     margin-right: 10px;
 
 
-    .big-btn {
+    .big-btnForm {
       font-family: 'Open Sans', sans-serif;
       display: flex;
       width: 300px;
