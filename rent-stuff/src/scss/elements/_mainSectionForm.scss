@@ -12,8 +12,8 @@
 
     .mainSection_imgForm {
       position: absolute;
-      background-image: url("../../assets/Home-Hero-Image.jpg");
-      bottom: -200px;
+      background-image: url("../../assets/Form-Hero-Image.jpg");
+      bottom: -130px;
       left: 0;
       z-index: 1;
       background-size: cover;
@@ -46,26 +46,31 @@
       margin-bottom: 65px;
     }
   }
-  .button__containerForm {
+  &__paragraph {
+    margin-top: 19.2px;
+    font-size: 40px;
+    font-weight: 200;
+  }
+  &__fourSteps{
     display: flex;
-    margin-right: 10px;
+    justify-content: center;
+    align-items: center;
 
-
-    .big-btnForm {
-      font-family: 'Open Sans', sans-serif;
+    &__element{
+      width: 150px;
+      height: 150px;
+      margin-top: 25.8px;
+      font-size: 22px;
       display: flex;
-      width: 300px;
-      height: 120px;
       justify-content: center;
       align-items: center;
-      background-color: #FFFFFF;
-      font-size: 36px;
-      color: #3C3C3C;
-      font-weight: lighter;
-
-      &:first-child {
-        margin-right: 40px;
-      }
+      text-align: center;
+      border: 1px solid black;
+      rotate: 45deg;
+    }
+    h2 {
+      font-size: 32px;
+      color: black;
     }
   }
 }

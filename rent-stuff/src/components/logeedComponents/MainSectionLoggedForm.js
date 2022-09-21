@@ -11,11 +11,14 @@ const MainSectionLoggedForm = () => {
             <div className='wrapper'>
                 <div className='mainSection_imgForm'/>
                 <div className='mainSection__containerForm'>
-                    <h1> Zacznij pomagać! <br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
+                    <h1> Oddaj rzeczy, których nie chcesz <br/>POTRZEBUJACYM</h1>
                     <img className='decorationForm' src={decoration}/>
-                    <div className='button__containerForm'>
-                        <button className="big-btnForm"><Link to="/UserLoginInHome/FormSection">ODDAJ<br/>RZECZY</Link></button>
-                        <button className="big-btnForm"><Link to="/UserLoginInHome/FormSection">ZORGANIZUJ<br/>ZBIÓRKĘ</Link></button>
+                    <div className='mainSectionForm__paragraph'> Wystarcza 4 proste kroki:</div>
+                    <div className='mainSectionForm__fourSteps'>
+                        <div className='mainSectionForm__fourSteps__element'><h2>1</h2> <br/> Wybierz<br/> rzeczy</div>
+                        <div className='mainSectionForm__fourSteps__element'><h2>2</h2> <br/> Spakuj je<br/> w worki</div>
+                        <div className='mainSectionForm__fourSteps__element'><h2>3</h2><br/> Wybierz<br/>fundacje</div>
+                        <div className='mainSectionForm__fourSteps__element'><h2>4</h2><br/> Zamów <br/>kuriera</div>
                     </div>
                 </div>
             </div>
