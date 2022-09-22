@@ -59,14 +59,19 @@
     &__element{
       width: 150px;
       height: 150px;
-      margin-top: 25.8px;
+      margin-top: 51.6px;
       font-size: 22px;
       display: flex;
       justify-content: center;
       align-items: center;
       text-align: center;
-      border: 1px solid black;
+      border: 0.75px solid black;
       rotate: 45deg;
+      margin-right: 25px;
+
+    }
+    &__text {
+      rotate: -45deg;
     }
     h2 {
       font-size: 32px;

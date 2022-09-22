@@ -15,10 +15,26 @@ const MainSectionLoggedForm = () => {
                     <img className='decorationForm' src={decoration}/>
                     <div className='mainSectionForm__paragraph'> Wystarcza 4 proste kroki:</div>
                     <div className='mainSectionForm__fourSteps'>
-                        <div className='mainSectionForm__fourSteps__element'><h2>1</h2> <br/> Wybierz<br/> rzeczy</div>
-                        <div className='mainSectionForm__fourSteps__element'><h2>2</h2> <br/> Spakuj je<br/> w worki</div>
-                        <div className='mainSectionForm__fourSteps__element'><h2>3</h2><br/> Wybierz<br/>fundacje</div>
-                        <div className='mainSectionForm__fourSteps__element'><h2>4</h2><br/> Zamów <br/>kuriera</div>
+                        <div className='mainSectionForm__fourSteps__element'>
+                            <div className='mainSectionForm__fourSteps__text'>
+                                <h2>1</h2> <br/> Wybierz<br/> rzeczy
+                            </div>
+                        </div>
+                        <div className='mainSectionForm__fourSteps__element'>
+                            <div className='mainSectionForm__fourSteps__text'>
+                                <h2>2</h2> <br/> Spakuj je<br/> w worki
+                            </div>
+                        </div>
+                        <div className='mainSectionForm__fourSteps__element'>
+                            <div className='mainSectionForm__fourSteps__text'>
+                                <h2>3</h2><br/> Wybierz<br/>fundacje
+                            </div>
+                        </div>
+                        <div className='mainSectionForm__fourSteps__element'>
+                            <div className='mainSectionForm__fourSteps__text'>
+                                <h2>4</h2><br/> Zamów <br/>kuriera
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
