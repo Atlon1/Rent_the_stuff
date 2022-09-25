@@ -7,7 +7,7 @@
 
 
   .wrapper {
-  flex-direction: column;
+    flex-direction: column;
   }
 
   &__yellowBar {
@@ -30,4 +30,62 @@
     }
   }
 
+  &__pageOne {
+    background-image: url("../../assets/Background-Form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+    &__steps {
+      font-size: 24px;
+      font-weight: 200;
+      margin-top: 35px;
+      margin-left: 142px;
+    }
+
+    &__header {
+      font-size: 36px;
+      font-weight: 700;
+      margin-top: 70px;
+      margin-left: 142px;
+    }
+
+    &__formRadio {
+      display: flex;
+      flex-direction: column;
+      margin-left: 142px;
+    }
+
+    &__radio {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 200;
+      display: flex;
+      align-items: center;
+    }
+
+    &__btn {
+      margin-top: 158px;
+      margin-left: 142px;
+      margin-bottom: 50px;
+      width: 180px;
+      height: 79px;
+      background: none;
+      border: 0.75px solid black;
+      font-size: 24px;
+      font-weight: 200;
+    }
+  }
+  input[type=radio] {
+    padding: 20px;
+    -webkit-appearance: none;
+    outline: 0.5px solid black;
+    margin-right: 30px;
+
+  }
+
+  input[type=radio]:checked {
+    display: inline-block;
+    background-color: #FAD648;
+  }
 }
