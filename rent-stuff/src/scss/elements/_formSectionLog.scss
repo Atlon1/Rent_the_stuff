@@ -35,7 +35,6 @@
     background-repeat: no-repeat;
     background-size: cover;
 
-
     &__steps {
       font-size: 24px;
       font-weight: 200;
@@ -76,6 +75,74 @@
       font-weight: 200;
     }
   }
+  &__pageTwo {
+    background-image: url("../../assets/Background-Form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    &__steps {
+      font-size: 24px;
+      font-weight: 200;
+      margin-top: 35px;
+      margin-left: 142px;
+    }
+
+    &__header {
+      font-size: 36px;
+      font-weight: 700;
+      margin-top: 70px;
+      margin-left: 142px;
+    }
+
+    &__formSelect {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      margin-left: 142px;
+    }
+
+    &__formContent{
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 200;
+    }
+
+    &__select {
+      margin-top: 40px;
+      font-size: 24px;
+      font-weight: 200;
+      background: none;
+      margin-left: 26px;
+      width: 300px;
+      height: 49px;
+      cursor: pointer;
+
+    }
+
+
+    &__btn {
+      margin-top: 470px;
+      margin-left: 142px;
+      margin-bottom: 50px;
+      width: 180px;
+      height: 79px;
+      background: none;
+      border: 0.75px solid black;
+      font-size: 24px;
+      font-weight: 200;
+    }
+    &__btnNext {
+      margin-top: 470px;
+      margin-left: 50px;
+      margin-bottom: 50px;
+      width: 180px;
+      height: 79px;
+      background: none;
+      border: 0.75px solid black;
+      font-size: 24px;
+      font-weight: 200;
+    }
+  }
   input[type=radio] {
     padding: 20px;
     -webkit-appearance: none;
@@ -88,4 +155,11 @@
     display: inline-block;
     background-color: #FAD648;
   }
+  select {
+    color: black;
+    padding: 12px;
+    -webkit-appearance: button;
+    outline: none;
+  }
+
 }
