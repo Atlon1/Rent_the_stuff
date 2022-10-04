@@ -12,13 +12,18 @@ const FormSection = () => {
     const [yellowHeader, setYellowHeader] = useState("Ważne!");
     const [yellowPara, setYellowPara] = useState("Uzupłenij szczegóły dotczące Twoich rzeczy. Dzięki temu\n" +
         "                        będziemy wiedzieć komu najlepiej je przekazać.");
+    const [street, setStreet] = useState("");
+    const [city, setCity] = useState("");
+    const [codePost, setCodePost] = useState("");
+    const [telNum, setTelNum] = useState("");
+    const [data, setData] = useState("");
 
 
     const [btnColorChild, setbtnColorChild] = useState("none");
-    const [btnColorMoth, setbtnColorMoth] = useState("none")
-    const [btnColorHas, setbtnColorHas] = useState("none")
-    const [btnColorSpr, setbtnColorSpr] = useState("none")
-    const [btnColorOld, setbtnColorOld] = useState("none")
+    const [btnColorMoth, setbtnColorMoth] = useState("none");
+    const [btnColorHas, setbtnColorHas] = useState("none");
+    const [btnColorSpr, setbtnColorSpr] = useState("none");
+    const [btnColorOld, setbtnColorOld] = useState("none");
 
 
     const [viewDisplayOnePage, setViewDisplayOnePage] = useState('block');
