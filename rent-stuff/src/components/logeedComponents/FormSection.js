@@ -218,6 +218,42 @@ const FormSection = () => {
             }>
                 <div className='form__pageFour__steps'> Krok 4/4</div>
                 <div className='form__pageFour__header'>Podaj adres oraz termin odbioru rzeczy przez kuriera</div>
+                <div className='form__pageFour__container'>
+                    <div className='form__pageFour__firstTable'>
+                        <div className='form__pageFour__text'>Adres odbioru:</div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Ulica</div>
+                            <input className='form__pageFour__text__input' type='text'/>
+                        </div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Miasto</div>
+                            <input className='form__pageFour__text__input'  type='text'/>
+                        </div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Kod pocztowy</div>
+                            <input className='form__pageFour__text__input'  type='text'/>
+                        </div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Numer telefonu</div>
+                            <input className='form__pageFour__text__input'  type='text'/>
+                        </div>
+                    </div>
+                    <div className='form__pageFour__firstTable'>
+                        <div className='form__pageFour__text'>Termin odbioru:</div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Data</div>
+                            <input className='form__pageFour__text__input'  type='text'/>
+                        </div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Godzina</div>
+                            <input className='form__pageFour__text__input'  type='text'/>
+                        </div>
+                        <div className='form__pageFour__text__cont'>
+                            <div className='form__pageFour__text__content'>Uwagi dla kuriera</div>
+                            <textarea className='form__pageFour__text__textarea'/>
+                        </div>
+                    </div>
+                </div>
                 <form className='form__pageFour__formSelect'>
 
                 </form>
