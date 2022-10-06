@@ -1,5 +1,7 @@
 import React, {useState} from "react";
 import '../../scss/main.scss';
+import shirt from '../../assets/Icon-1.svg';
+import Rows from '../../assets/Icon-4.svg';
 
 
 const FormSection = () => {
@@ -17,6 +19,8 @@ const FormSection = () => {
     const [codePost, setCodePost] = useState("");
     const [telNum, setTelNum] = useState("");
     const [data, setData] = useState("");
+    const [hour, setHour] = useState("");
+    const [warning, setWarning] = useState("");
 
 
     const [btnColorChild, setbtnColorChild] = useState("none");
@@ -25,70 +29,89 @@ const FormSection = () => {
     const [btnColorSpr, setbtnColorSpr] = useState("none");
     const [btnColorOld, setbtnColorOld] = useState("none");
 
-
+    const [viewDisplayYellowBar, setViewDisplayYellowBar] = useState('block');
     const [viewDisplayOnePage, setViewDisplayOnePage] = useState('block');
     const [viewDisplayTwoPage, setViewDisplayTwoPage] = useState('none');
     const [viewDisplayThirdPage, setViewDisplayThirdPage] = useState('none');
     const [viewDisplayFourPage, setViewDisplayFourPage] = useState('none');
+    const [viewDisplaySummaryPage, setViewDisplaySummaryPage] = useState('none');
+    const [viewDisplayEndPage, setViewDisplayEndPage] = useState('none');
 
 
     const handleBtnNextPageOne = () => {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
-        setViewDisplayOnePage('none')
-        setViewDisplayTwoPage('block')
+        setViewDisplayOnePage('none');
+        setViewDisplayTwoPage('block');
     }
 
     const handleBtnNextPageTwo = () => {
         setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.')
-        setViewDisplayTwoPage('none')
-        setViewDisplayThirdPage('block')
-        console.log(selectItem)
+        setViewDisplayTwoPage('none');
+        setViewDisplayThirdPage('block');
+        console.log(selectItem);
     }
 
     const handleBtnBackPageTwo = () => {
         setYellowPara("Uzupłenij szczegóły dotczące Twoich rzeczy. Dzięki temu\n" +
-            "                        będziemy wiedzieć komu najlepiej je przekazać.")
-        setViewDisplayOnePage('block')
-        setViewDisplayTwoPage('none')
+            "                        będziemy wiedzieć komu najlepiej je przekazać.");
+        setViewDisplayOnePage('block');
+        setViewDisplayTwoPage('none');
 
     }
     const handleBtnNextPageThird = () => {
-        setYellowPara('Podaj adres oraz termin odbioru rzeczy.')
-        setViewDisplayThirdPage('none')
-        setViewDisplayFourPage('block')
+        setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
+        setViewDisplayThirdPage('none');
+        setViewDisplayFourPage('block');
     }
 
     const handleChildren = () => {
-        setWhoHelp("dzieciom")
-        setbtnColorChild('#FAD648')
+        setWhoHelp("dzieciom");
+        setbtnColorChild('#FAD648');
     }
     const handleMother = () => {
-        setWhoHelp("samotnym matkom")
-        setbtnColorMoth('#FAD648')
+        setWhoHelp("samotnym matkom");
+        setbtnColorMoth('#FAD648');
     }
     const handleWithHouse = () => {
-        setWhoHelp("bezdomnym")
-        setbtnColorHas('#FAD648')
+        setWhoHelp("bezdomnym");
+        setbtnColorHas('#FAD648');
     }
     const handleNoSpr = () => {
-        setWhoHelp("niepełnosprawnym")
-        setbtnColorSpr('#FAD648')
+        setWhoHelp("niepełnosprawnym");
+        setbtnColorSpr('#FAD648');
     }
     const handleOlders = () => {
-        setWhoHelp("osobom starszym")
-        setbtnColorOld('#FAD648')
+        setWhoHelp("osobom starszym");
+        setbtnColorOld('#FAD648');
     }
     const handleBtnBackPageThird = () => {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
-        setViewDisplayThirdPage('none')
-        setViewDisplayTwoPage('block')
+        setViewDisplayThirdPage('none');
+        setViewDisplayTwoPage('block');
 
+    }
+
+    const handleBtnNextPageFour = () => {
+        setViewDisplayYellowBar('none');
+        setViewDisplayFourPage('none');
+        setViewDisplaySummaryPage('block');
+        console.log(street, city, codePost, telNum, data, hour, warning)
+    }
+
+    const handleBtnBackPageFour = () => {
+        setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.');
+        setViewDisplayThirdPage('block');
+        setViewDisplayFourPage('none');
     }
 
 
     return (<section className='form'>
         <div className="wrapper">
-            <div className='form__yellowBar'>
+            <div className='form__yellowBar' style={
+                {
+                    display: viewDisplayYellowBar
+                }
+            }>
                 <div className='form__yellowBar__header'>{yellowHeader}</div>
                 <div className='form__yellowBar__content'>{yellowPara}</div>
             </div>
@@ -228,42 +251,104 @@ const FormSection = () => {
                         <div className='form__pageFour__text'>Adres odbioru:</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Ulica</div>
-                            <input className='form__pageFour__text__input' type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setStreet(e.target.value)}/>
                         </div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Miasto</div>
-                            <input className='form__pageFour__text__input'  type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setCity(e.target.value)}/>
                         </div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Kod pocztowy</div>
-                            <input className='form__pageFour__text__input'  type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setCodePost(e.target.value)}/>
                         </div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Numer telefonu</div>
-                            <input className='form__pageFour__text__input'  type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setTelNum(e.target.value)}/>
                         </div>
                     </div>
                     <div className='form__pageFour__firstTable'>
                         <div className='form__pageFour__text'>Termin odbioru:</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Data</div>
-                            <input className='form__pageFour__text__input'  type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setData(e.target.value)}/>
                         </div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Godzina</div>
-                            <input className='form__pageFour__text__input'  type='text'/>
+                            <input className='form__pageFour__text__input' type='text'
+                                   onChange={e => setHour(e.target.value)}/>
                         </div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Uwagi dla kuriera</div>
-                            <textarea className='form__pageFour__text__textarea'/>
+                            <textarea className='form__pageFour__text__textarea'
+                                      onChange={e => setWarning(e.target.value)}/>
                         </div>
                     </div>
                 </div>
-                <form className='form__pageFour__formSelect'>
 
-                </form>
-                <button className="form__pageFour__btn" onClick={handleBtnBackPageTwo}>Wstecz</button>
-                <button className="form__pageFour__btnNext" onClick={handleBtnNextPageTwo}>Dalej</button>
+                <button className="form__pageFour__btn" onClick={handleBtnBackPageFour}>Wstecz</button>
+                <button className="form__pageFour__btnNext" onClick={handleBtnNextPageFour}>Dalej</button>
+            </div>
+            <div className='form__pageSummary' style={
+                {
+                    display: viewDisplaySummaryPage
+                }
+            }>
+                <div className='form__pageSummary__header'>Podsumowanie Twojej darowizny</div>
+                <div className='form__pageSummary__headerSum'>Oddajesz:</div>
+                    <div className='form__pageSummary__headerSum__container'>
+                        <div className='form__pageSummary__headerSum__firstRow'>
+                            <img className='form__pageSummary__headerSum__img' src={shirt}/>
+                            <div className='form__pageSummary__headerSum__text'>{selectItem} worki, {radio}, {whoHelp}</div>
+                        </div>
+                        <div className='form__pageSummary__headerSum__firstRow'>
+                            <img className='form__pageSummary__headerSum__img' src={Rows}/>
+                            <div className='form__pageSummary__headerSum__text'>dla lokalizacji: {localization}</div>
+                        </div>
+                    </div>
+                <div className='form__pageSummary__container'>
+                    <div className='form__pageSummary__firstTable'>
+                        <div className='form__pageSummary__text'>Adres odbioru:</div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Ulica</div>
+                            <div className='form__pageSummary__text__input'>{street}</div>
+                        </div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Miasto</div>
+                            <div className='form__pageSummary__text__input'>{city}</div>
+                        </div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Kod pocztowy</div>
+                            <div className='form__pageSummary__text__input'>{codePost}</div>
+                        </div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Numer telefonu</div>
+                            <div className='form__pageSummary__text__input'>{telNum}</div>
+                        </div>
+                    </div>
+                    <div className='form__pageSummary__firstTable'>
+                        <div className='form__pageSummary__text'>Termin odbioru:</div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Data</div>
+                            <div className='form__pageSummary__text__input'>{data}</div>
+                        </div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Godzina</div>
+                            <div className='form__pageSummary__text__input'>{hour}</div>
+                        </div>
+                        <div className='form__pageSummary__text__cont'>
+                            <div className='form__pageSummary__text__content'>Uwagi dla kuriera</div>
+                            <div className='form__pageSummary__text__input'>{warning}</div>
+                        </div>
+                    </div>
+                </div>
+
+                <button className="form__pageSummary__btn" onClick={handleBtnBackPageFour}>Wstecz</button>
+                <button className="form__pageSummary__btnNext" onClick={handleBtnNextPageFour}>Dalej</button>
             </div>
         </div>
     </section>)
