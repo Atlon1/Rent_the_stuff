@@ -402,6 +402,8 @@
         height: 40px;
         margin-left: 50px;
         font-size: 22px;
+        display: flex;
+        align-items: center;
       }
       &__textarea {
         width: 256px;
@@ -413,7 +415,7 @@
 
 
     &__btn {
-      margin-top: 205px;
+      margin-top: 59px;
       margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
@@ -425,7 +427,7 @@
     }
 
     &__btnNext {
-      margin-top: 205px;
+      margin-top: 59px;
       margin-left: 50px;
       margin-bottom: 50px;
       width: 180px;
@@ -434,6 +436,30 @@
       border: 0.75px solid black;
       font-size: 24px;
       font-weight: 200;
+    }
+  }
+
+  &__pageEnd {
+    background-image: url("../../assets/Background-Form.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 803px;
+
+    &__header {
+      width: 628px;
+      text-align: center;
+      font-size: 36px;
+      font-weight: 200;
+      margin-top: 330px;
+      margin-left: 294px;
+      line-height: 42px;
+    }
+
+    &__decoration {
+      width: 253px;
+      height: 33px;
+      margin-left: 482px;
+      margin-top: 25px;
     }
   }
 

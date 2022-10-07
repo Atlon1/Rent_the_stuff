@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import '../../scss/main.scss';
 import shirt from '../../assets/Icon-1.svg';
 import Rows from '../../assets/Icon-4.svg';
+import decoration from  '../../assets/Decoration.svg';
 
 
 const FormSection = () => {
@@ -102,6 +103,17 @@ const FormSection = () => {
         setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.');
         setViewDisplayThirdPage('block');
         setViewDisplayFourPage('none');
+    }
+
+    const handleBtnNextPageSummary = () => {
+        setViewDisplayEndPage('block');
+        setViewDisplaySummaryPage('none');
+    }
+
+    const handleBtnBackPageSummary = () => {
+        setViewDisplayYellowBar('block');
+        setViewDisplayFourPage('block');
+        setViewDisplaySummaryPage('none');
     }
 
 
@@ -346,9 +358,16 @@ const FormSection = () => {
                         </div>
                     </div>
                 </div>
-
-                <button className="form__pageSummary__btn" onClick={handleBtnBackPageFour}>Wstecz</button>
-                <button className="form__pageSummary__btnNext" onClick={handleBtnNextPageFour}>Dalej</button>
+                <button className="form__pageSummary__btn" onClick={handleBtnBackPageSummary}>Wstecz</button>
+                <button className="form__pageSummary__btnNext" onClick={handleBtnNextPageSummary}>Potwierdzam</button>
+            </div>
+            <div className='form__pageEnd' style={
+                {
+                    display: viewDisplayEndPage
+                }
+            }>
+                <div className='form__pageEnd__header'>Dziękujemy za przesłanie formularza. Na maila prześlemy wszlekie infomracje o odbiorze.</div>
+                <img className='form__pageEnd__decoration' src={decoration}/>
             </div>
         </div>
     </section>)
