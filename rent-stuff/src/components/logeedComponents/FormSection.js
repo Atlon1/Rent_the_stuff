@@ -6,6 +6,15 @@ import decoration from  '../../assets/Decoration.svg';
 
 
 const FormSection = () => {
+    const validateRadio = () => {
+        if (!radio) {
+            return "Wybierz conajmniej jedna opcje!"
+        }
+        return null
+    }
+
+    const [radioErr, setRadioErr] = useState(null);
+
 
     const [radio, setRadio] = useState("");
     const [selectItem, setSelectItem] = useState("-- wybierz --");
@@ -22,6 +31,7 @@ const FormSection = () => {
     const [data, setData] = useState("");
     const [hour, setHour] = useState("");
     const [warning, setWarning] = useState("");
+    const [border, setBorder] = useState("black");
 
 
     const [btnColorChild, setbtnColorChild] = useState("none");
@@ -39,10 +49,19 @@ const FormSection = () => {
     const [viewDisplayEndPage, setViewDisplayEndPage] = useState('none');
 
 
-    const handleBtnNextPageOne = () => {
+    const handleBtnNextPageOne =async (e) => {
+        e.preventDefault()
+        const radioError = validateRadio(radio)
+        if (radioError) {
+            setRadioErr(radioErr)
+            setBorder('red')
+        }
+        else {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
         setViewDisplayOnePage('none');
         setViewDisplayTwoPage('block');
+            setBorder('black');
+        }
     }
 
     const handleBtnNextPageTwo = () => {
@@ -163,7 +182,17 @@ const FormSection = () => {
                                                                    onChange={e => setRadio(e.target.value)}
                     />Inne</label>
                 </form>
-                <button className="form__pageOne__btn" onClick={handleBtnNextPageOne}>Dalej</button>
+                <div className='form__pageOne__validation' style={
+                    {
+                        color: "red",
+                        height: "20px"
+                    }
+                }>{radioErr}</div>
+                <button className="form__pageOne__btn" style={
+                    {
+                        borderColor: border
+                    }
+                } onClick={handleBtnNextPageOne}>Dalej</button>
             </div>
             <div className='form__pageTwo' style={
                 {
