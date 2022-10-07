@@ -53,6 +53,11 @@
       display: flex;
       flex-direction: column;
       margin-left: 142px;
+      :nth-child(5){
+        margin-bottom: 150px;
+    }
+
+
     }
 
     &__radio {
@@ -61,10 +66,10 @@
       font-weight: 200;
       display: flex;
       align-items: center;
+
     }
 
     &__btn {
-      margin-top: 158px;
       margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
@@ -73,6 +78,11 @@
       border: 0.75px solid ;
       font-size: 24px;
       font-weight: 200;
+    }
+    &__validation {
+      color: red;
+      margin-left: 142px;
+      margin-bottom: 10px;
     }
   }
 

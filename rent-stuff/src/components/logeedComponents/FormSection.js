@@ -53,8 +53,9 @@ const FormSection = () => {
         e.preventDefault()
         const radioError = validateRadio(radio)
         if (radioError) {
-            setRadioErr(radioErr)
+            setRadioErr(radioError)
             setBorder('red')
+
         }
         else {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
@@ -68,7 +69,6 @@ const FormSection = () => {
         setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.')
         setViewDisplayTwoPage('none');
         setViewDisplayThirdPage('block');
-        console.log(selectItem);
     }
 
     const handleBtnBackPageTwo = () => {
@@ -76,7 +76,7 @@ const FormSection = () => {
             "                        będziemy wiedzieć komu najlepiej je przekazać.");
         setViewDisplayOnePage('block');
         setViewDisplayTwoPage('none');
-
+        setRadioErr("");
     }
     const handleBtnNextPageThird = () => {
         setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
@@ -115,7 +115,6 @@ const FormSection = () => {
         setViewDisplayYellowBar('none');
         setViewDisplayFourPage('none');
         setViewDisplaySummaryPage('block');
-        console.log(street, city, codePost, telNum, data, hour, warning)
     }
 
     const handleBtnBackPageFour = () => {
@@ -182,12 +181,7 @@ const FormSection = () => {
                                                                    onChange={e => setRadio(e.target.value)}
                     />Inne</label>
                 </form>
-                <div className='form__pageOne__validation' style={
-                    {
-                        color: "red",
-                        height: "20px"
-                    }
-                }>{radioErr}</div>
+                <div className='form__pageOne__validation'>{radioErr}</div>
                 <button className="form__pageOne__btn" style={
                     {
                         borderColor: border
