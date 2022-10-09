@@ -26,10 +26,17 @@ const FormSection = () => {
         }
         return null
     }
+    const validationWhoHelp = () => {
+        if (!whoHelp) {
+            return'Wybierz conajmniej jedna opcje'
+        }
+        return null
+    }
 
     const [radioErr, setRadioErr] = useState(null);
     const [selectErr, setSelectErr] = useState(null);
     const [localizationErr, setLocalizationErr] = useState(null);
+    const [whoHelpErr, setWhoHelpErr] = useState(null);
 
 
     const [radio, setRadio] = useState("");
@@ -105,14 +112,17 @@ const FormSection = () => {
     const handleBtnNextPageThird = async (e) => {
         e.preventDefault()
         const localizationError = validateLocalization (localization)
-        if (localizationError) {
+        const whoHelpError = validationWhoHelp(whoHelp)
+        if (localizationError || whoHelpError) {
             setLocalizationErr(localizationError)
+            setWhoHelpErr(whoHelpError)
             setBorder('red')
         } else {
-        setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
-        setViewDisplayThirdPage('none');
-        setViewDisplayFourPage('block');
+            setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
+            setViewDisplayThirdPage('none');
+            setViewDisplayFourPage('block');
         }
+
     }
 
     const handleChildren = () => {
@@ -311,7 +321,7 @@ const FormSection = () => {
                                onChange={e => setCurentOrg(e.target.value)}/>
                     </form>
                 </div>
-                <div className='form__pageThird__validation'>{localizationErr}</div>
+                <div className='form__pageThird__validation'>{localizationErr || whoHelpErr}</div>
                 <button className="form__pageThird__btn" onClick={handleBtnBackPageThird}>Wstecz</button>
                 <button className="form__pageThird__btnNext" onClick={handleBtnNextPageThird} style={
                     {
@@ -383,11 +393,11 @@ const FormSection = () => {
                 <div className='form__pageSummary__headerSum'>Oddajesz:</div>
                 <div className='form__pageSummary__headerSum__container'>
                     <div className='form__pageSummary__headerSum__firstRow'>
-                        <img className='form__pageSummary__headerSum__img' src={shirt}/>
+                        <img className='form__pageSummary__headerSum__img' src={shirt} alt='shirt'/>
                         <div className='form__pageSummary__headerSum__text'>{selectItem} worki, {radio}, {whoHelp}</div>
                     </div>
                     <div className='form__pageSummary__headerSum__firstRow'>
-                        <img className='form__pageSummary__headerSum__img' src={Rows}/>
+                        <img className='form__pageSummary__headerSum__img' src={Rows} alt='Rows'/>
                         <div className='form__pageSummary__headerSum__text'>dla lokalizacji: {localization}</div>
                     </div>
                 </div>
@@ -438,7 +448,7 @@ const FormSection = () => {
                 <div className='form__pageEnd__header'>Dziękujemy za przesłanie formularza. Na maila prześlemy wszlekie
                     infomracje o odbiorze.
                 </div>
-                <img className='form__pageEnd__decoration' src={decoration}/>
+                <img className='form__pageEnd__decoration' src={decoration} alt='decoration'/>
             </div>
         </div>
     </section>)
