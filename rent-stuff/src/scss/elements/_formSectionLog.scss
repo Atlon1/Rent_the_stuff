@@ -110,6 +110,7 @@
       flex-direction: row;
       align-items: center;
       margin-left: 142px;
+      margin-bottom: 470px;
     }
 
     &__formContent {
@@ -132,7 +133,7 @@
 
 
     &__btn {
-      margin-top: 470px;
+
       margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
@@ -142,9 +143,14 @@
       font-size: 24px;
       font-weight: 200;
     }
+    &__validation {
+      color: red;
+      margin-left: 142px;
+      margin-bottom: 10px;
+    }
 
     &__btnNext {
-      margin-top: 470px;
+
       margin-left: 50px;
       margin-bottom: 50px;
       width: 180px;
@@ -222,10 +228,10 @@
       height: 40px;
       background-color: #eceae6;
       border: 0.75px solid #3C3C3C;
+      margin-bottom: 121px;
     }
 
     &__btn {
-      margin-top: 121px;
       margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
@@ -235,9 +241,13 @@
       font-size: 24px;
       font-weight: 200;
     }
+    &__validation {
+      color: red;
+      margin-left: 142px;
+      margin-bottom: 10px;
+    }
 
     &__btnNext {
-      margin-top: 121px;
       margin-left: 50px;
       margin-bottom: 50px;
       width: 180px;

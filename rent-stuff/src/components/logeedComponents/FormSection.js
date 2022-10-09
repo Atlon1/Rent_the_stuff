@@ -2,10 +2,11 @@ import React, {useState} from "react";
 import '../../scss/main.scss';
 import shirt from '../../assets/Icon-1.svg';
 import Rows from '../../assets/Icon-4.svg';
-import decoration from  '../../assets/Decoration.svg';
+import decoration from '../../assets/Decoration.svg';
 
 
 const FormSection = () => {
+
     const validateRadio = () => {
         if (!radio) {
             return "Wybierz conajmniej jedna opcje!"
@@ -13,12 +14,27 @@ const FormSection = () => {
         return null
     }
 
+    const validateSelectItem = () => {
+        if (!selectItem.match(/^\d+/)) {
+            return 'Wybierz conajmniej jedna opcje'
+        }
+        return null
+    }
+    const validateLocalization = () => {
+        if (!localization && !curentOrg) {
+            return 'Wybierz conajmniej jedna opcje'
+        }
+        return null
+    }
+
     const [radioErr, setRadioErr] = useState(null);
+    const [selectErr, setSelectErr] = useState(null);
+    const [localizationErr, setLocalizationErr] = useState(null);
 
 
     const [radio, setRadio] = useState("");
-    const [selectItem, setSelectItem] = useState("-- wybierz --");
-    const [localization, setLocalization] = useState("-- wybierz --");
+    const [selectItem, setSelectItem] = useState("");
+    const [localization, setLocalization] = useState("");
     const [whoHelp, setWhoHelp] = useState("");
     const [curentOrg, setCurentOrg] = useState("");
     const [yellowHeader, setYellowHeader] = useState("Ważne!");
@@ -49,26 +65,33 @@ const FormSection = () => {
     const [viewDisplayEndPage, setViewDisplayEndPage] = useState('none');
 
 
-    const handleBtnNextPageOne =async (e) => {
+    const handleBtnNextPageOne = async (e) => {
         e.preventDefault()
         const radioError = validateRadio(radio)
         if (radioError) {
             setRadioErr(radioError)
             setBorder('red')
 
-        }
-        else {
-        setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
-        setViewDisplayOnePage('none');
-        setViewDisplayTwoPage('block');
+        } else {
+            setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
+            setViewDisplayOnePage('none');
+            setViewDisplayTwoPage('block');
             setBorder('black');
         }
     }
 
-    const handleBtnNextPageTwo = () => {
-        setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.')
-        setViewDisplayTwoPage('none');
-        setViewDisplayThirdPage('block');
+    const handleBtnNextPageTwo = async (e) => {
+        e.preventDefault()
+        const selectError = validateSelectItem(selectItem);
+        if (selectError) {
+            setSelectErr(selectError)
+            setBorder('red')
+        } else {
+            setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.')
+            setViewDisplayTwoPage('none');
+            setViewDisplayThirdPage('block');
+            setBorder('black');
+        }
     }
 
     const handleBtnBackPageTwo = () => {
@@ -77,11 +100,19 @@ const FormSection = () => {
         setViewDisplayOnePage('block');
         setViewDisplayTwoPage('none');
         setRadioErr("");
+        setBorder('black')
     }
-    const handleBtnNextPageThird = () => {
+    const handleBtnNextPageThird = async (e) => {
+        e.preventDefault()
+        const localizationError = validateLocalization (localization)
+        if (localizationError) {
+            setLocalizationErr(localizationError)
+            setBorder('red')
+        } else {
         setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
         setViewDisplayThirdPage('none');
         setViewDisplayFourPage('block');
+        }
     }
 
     const handleChildren = () => {
@@ -108,19 +139,22 @@ const FormSection = () => {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
         setViewDisplayThirdPage('none');
         setViewDisplayTwoPage('block');
-
+        setSelectErr("");
     }
 
     const handleBtnNextPageFour = () => {
         setViewDisplayYellowBar('none');
         setViewDisplayFourPage('none');
         setViewDisplaySummaryPage('block');
+
     }
 
     const handleBtnBackPageFour = () => {
         setYellowPara('Jeśli wiesz komu chcesz pomóc, możesz wpisać nazwę tej organizacji w wyszukiwarce. Możesz też filtrować organizacje po ich lokalizacji bądż celu ich pomocy.');
         setViewDisplayThirdPage('block');
         setViewDisplayFourPage('none');
+        setLocalizationErr("");
+        setBorder('black')
     }
 
     const handleBtnNextPageSummary = () => {
@@ -186,7 +220,8 @@ const FormSection = () => {
                     {
                         borderColor: border
                     }
-                } onClick={handleBtnNextPageOne}>Dalej</button>
+                } onClick={handleBtnNextPageOne}>Dalej
+                </button>
             </div>
             <div className='form__pageTwo' style={
                 {
@@ -199,7 +234,7 @@ const FormSection = () => {
                     <div className='form__pageTwo__formContent'>Liczba 60l worków:</div>
                     <select value={selectItem} className='form__pageTwo__select'
                             onChange={e => setSelectItem(e.target.value)}>
-                        <option value='0'>{selectItem}</option>
+                        <option value=''>--Wybierz--</option>
                         <option value='1'>1</option>
                         <option value='2'>2</option>
                         <option value='3'>3</option>
@@ -207,8 +242,14 @@ const FormSection = () => {
                         <option value='5'>5</option>
                     </select>
                 </form>
+                <div className='form__pageTwo__validation'>{selectErr}</div>
                 <button className="form__pageTwo__btn" onClick={handleBtnBackPageTwo}>Wstecz</button>
-                <button className="form__pageTwo__btnNext" onClick={handleBtnNextPageTwo}>Dalej</button>
+                <button className="form__pageTwo__btnNext" style={
+                    {
+                        borderColor: border
+                    }
+                } onClick={handleBtnNextPageTwo}>Dalej
+                </button>
             </div>
             <div className='form__pageThird' style={
                 {
@@ -220,7 +261,7 @@ const FormSection = () => {
                     <div className='form__pageThird__formContent'>Lokalizacja:</div>
                     <select value={localization} className='form__pageThird__select'
                             onChange={e => setLocalization(e.target.value)}>
-                        <option value='0'>{localization}</option>
+                        <option value=''>--Wybierz--</option>
                         <option value='Poznań'>Poznań</option>
                         <option value='Warszawa'>Warszawa</option>
                         <option value='Kraków'>Kraków</option>
@@ -270,8 +311,13 @@ const FormSection = () => {
                                onChange={e => setCurentOrg(e.target.value)}/>
                     </form>
                 </div>
+                <div className='form__pageThird__validation'>{localizationErr}</div>
                 <button className="form__pageThird__btn" onClick={handleBtnBackPageThird}>Wstecz</button>
-                <button className="form__pageThird__btnNext" onClick={handleBtnNextPageThird}>Dalej</button>
+                <button className="form__pageThird__btnNext" onClick={handleBtnNextPageThird} style={
+                    {
+                        borderColor: border
+                    }
+                }>Dalej</button>
 
             </div>
             <div className='form__pageFour' style={
@@ -335,16 +381,16 @@ const FormSection = () => {
             }>
                 <div className='form__pageSummary__header'>Podsumowanie Twojej darowizny</div>
                 <div className='form__pageSummary__headerSum'>Oddajesz:</div>
-                    <div className='form__pageSummary__headerSum__container'>
-                        <div className='form__pageSummary__headerSum__firstRow'>
-                            <img className='form__pageSummary__headerSum__img' src={shirt}/>
-                            <div className='form__pageSummary__headerSum__text'>{selectItem} worki, {radio}, {whoHelp}</div>
-                        </div>
-                        <div className='form__pageSummary__headerSum__firstRow'>
-                            <img className='form__pageSummary__headerSum__img' src={Rows}/>
-                            <div className='form__pageSummary__headerSum__text'>dla lokalizacji: {localization}</div>
-                        </div>
+                <div className='form__pageSummary__headerSum__container'>
+                    <div className='form__pageSummary__headerSum__firstRow'>
+                        <img className='form__pageSummary__headerSum__img' src={shirt}/>
+                        <div className='form__pageSummary__headerSum__text'>{selectItem} worki, {radio}, {whoHelp}</div>
                     </div>
+                    <div className='form__pageSummary__headerSum__firstRow'>
+                        <img className='form__pageSummary__headerSum__img' src={Rows}/>
+                        <div className='form__pageSummary__headerSum__text'>dla lokalizacji: {localization}</div>
+                    </div>
+                </div>
                 <div className='form__pageSummary__container'>
                     <div className='form__pageSummary__firstTable'>
                         <div className='form__pageSummary__text'>Adres odbioru:</div>
@@ -389,7 +435,9 @@ const FormSection = () => {
                     display: viewDisplayEndPage
                 }
             }>
-                <div className='form__pageEnd__header'>Dziękujemy za przesłanie formularza. Na maila prześlemy wszlekie infomracje o odbiorze.</div>
+                <div className='form__pageEnd__header'>Dziękujemy za przesłanie formularza. Na maila prześlemy wszlekie
+                    infomracje o odbiorze.
+                </div>
                 <img className='form__pageEnd__decoration' src={decoration}/>
             </div>
         </div>
