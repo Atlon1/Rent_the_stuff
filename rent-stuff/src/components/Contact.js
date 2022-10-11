@@ -65,8 +65,7 @@ const Contact = () => {
             setEmailErr(emailError)
             setTextErr(textError)
             setBorderColor('1px solid red')
-        } else {
-
+        } else  {
         console.log('form submited', form)
 
         fetch(`${API}`,{
@@ -83,10 +82,10 @@ const Contact = () => {
             .catch(erorr => {
                 console.log(erorr)
             })
-            setNameErr('')
-            setEmailErr('')
-            setTextErr('')
-            setBorderColor('1px solid black')
+        setNameErr('')
+        setEmailErr('')
+        setTextErr('')
+        setBorderColor('1px solid black')
         return setAgree(
             <div className="Form_validate"
                  style={
