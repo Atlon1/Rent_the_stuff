@@ -58,21 +58,15 @@ const Contact = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         const nameError = validateName(form)
-        if (nameError) {
-            setNameErr(nameError)
-            setBorderColor('1px solid red')
-        }
         const emailError = validateEmail(form)
-        if (emailError) {
-            setEmailErr(emailError)
-            setBorderColor('1px solid red')
-        }
         const textError = validateText(form)
-        if (textError) {
+        if (nameError || emailError || textError) {
+            setNameErr(nameError)
+            setEmailErr(emailError)
             setTextErr(textError)
             setBorderColor('1px solid red')
-            return
-        }
+        } else {
+
         console.log('form submited', form)
 
         fetch(`${API}`,{
@@ -89,7 +83,10 @@ const Contact = () => {
             .catch(erorr => {
                 console.log(erorr)
             })
-
+            setNameErr('')
+            setEmailErr('')
+            setTextErr('')
+            setBorderColor('1px solid black')
         return setAgree(
             <div className="Form_validate"
                  style={
@@ -104,7 +101,7 @@ const Contact = () => {
                 Wiadomość została wysłana! Wkrótce się skontaktujemy.
             </div>
         )
-
+        }
     }
 
     return (

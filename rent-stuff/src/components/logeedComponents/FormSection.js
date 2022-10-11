@@ -16,27 +16,84 @@ const FormSection = () => {
 
     const validateSelectItem = () => {
         if (!selectItem.match(/^\d+/)) {
-            return 'Wybierz conajmniej jedna opcje'
+            return 'Wybierz conajmniej jedna opcje!'
         }
         return null
     }
     const validateLocalization = () => {
         if (!localization && !curentOrg) {
-            return 'Wybierz conajmniej jedna opcje'
+            return 'Wybierz conajmniej jedna opcje!'
         }
         return null
     }
     const validationWhoHelp = () => {
         if (!whoHelp) {
-            return'Wybierz conajmniej jedna opcje'
+            return 'Wybierz conajmniej jedna opcje!'
         }
         return null
     }
+
+    const validationStreet = () => {
+        if (!street) {
+            return "Pole nie może być pustę!"
+        } else if (street.length < 2) {
+            return "Ulica musi zawierać więcej niż 2 znaki!"
+        }
+        return null
+    }
+
+    const validationCity = () => {
+        if (!city) {
+            return "Pole nie może być pustę!"
+        } else if (city.length < 2) {
+            return "Miasto musi zawierać więcej niż 2 znaki!"
+        }
+        return null
+    }
+
+    const validationCodePost = () => {
+        if (!codePost) {
+            return "Pole nie może być pustę!"
+        } else if (!codePost.match(/^\d\d-\d\d\d$/)) {
+            return "5 cyfr podzielone znakiem - po drugiej cyfrze"
+        }
+        return null
+    }
+    const validateNumTel = () => {
+        if (!telNum) {
+            return "Pole nie może być pustę!"
+        } else if (!telNum.match(/^\d\d\d\d\d\d\d\d\d$/)) {
+            return "Tylko 9 cyfr!"
+        }
+        return null
+    }
+    const validateData = () => {
+        if (!data) {
+            return "Pole nie może być pustę!"
+        }
+        return null;
+    }
+
+    const validateHour = () => {
+        if (!hour) {
+            return "Pole nie może być pustę!"
+        } else if (!hour.match(/^\d\d:\d\d/)){
+            return "Nie prawidłowy format godziny!"
+        }
+        return null
+    }
+
 
     const [radioErr, setRadioErr] = useState(null);
     const [selectErr, setSelectErr] = useState(null);
     const [localizationErr, setLocalizationErr] = useState(null);
     const [whoHelpErr, setWhoHelpErr] = useState(null);
+    const [streetErr, setStreetErr] = useState(null);
+    const [cityErr, setCityErr] = useState(null);
+    const [codePostErr, setCodePostErr] = useState(null);
+    const [numTelErr, setNumTelErr] = useState(null);
+    const [dataErr, setDataErr] = useState(null);
+    const [hourErr, setHourErr] = useState(null);
 
 
     const [radio, setRadio] = useState("");
@@ -111,7 +168,7 @@ const FormSection = () => {
     }
     const handleBtnNextPageThird = async (e) => {
         e.preventDefault()
-        const localizationError = validateLocalization (localization)
+        const localizationError = validateLocalization(localization)
         const whoHelpError = validationWhoHelp(whoHelp)
         if (localizationError || whoHelpError) {
             setLocalizationErr(localizationError)
@@ -149,14 +206,39 @@ const FormSection = () => {
         setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
         setViewDisplayThirdPage('none');
         setViewDisplayTwoPage('block');
-        setSelectErr("");
+        setLocalizationErr("");
+        setWhoHelpErr("");
+        setBorder('black');
     }
 
-    const handleBtnNextPageFour = () => {
-        setViewDisplayYellowBar('none');
-        setViewDisplayFourPage('none');
-        setViewDisplaySummaryPage('block');
-
+    const handleBtnNextPageFour = (e) => {
+        e.preventDefault()
+        const streetError = validationStreet(street)
+        const cityError = validationCity(city)
+        const codePostError = validationCodePost(codePost)
+        const numTelError = validateNumTel(telNum)
+        const dataError = validateData(data)
+        const hourError = validateHour(hour)
+        if (streetError || cityError || codePostError || numTelError || hourError) {
+            setStreetErr(streetError)
+            setCityErr(cityError)
+            setCodePostErr(codePostError)
+            setNumTelErr(numTelError)
+            setDataErr(dataError)
+            setHourErr(hourError)
+            setBorder('red')
+        } else {
+            setViewDisplayYellowBar('none');
+            setViewDisplayFourPage('none');
+            setViewDisplaySummaryPage('block');
+            setBorder('Black')
+            setStreetErr('')
+            setCityErr('')
+            setCodePostErr('')
+            setNumTelErr('')
+            setDataErr('')
+            setHourErr('')
+        }
     }
 
     const handleBtnBackPageFour = () => {
@@ -327,7 +409,8 @@ const FormSection = () => {
                     {
                         borderColor: border
                     }
-                }>Dalej</button>
+                }>Dalej
+                </button>
 
             </div>
             <div className='form__pageFour' style={
@@ -345,34 +428,40 @@ const FormSection = () => {
                             <input className='form__pageFour__text__input' type='text'
                                    onChange={e => setStreet(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{streetErr}</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Miasto</div>
                             <input className='form__pageFour__text__input' type='text'
                                    onChange={e => setCity(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{cityErr}</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Kod pocztowy</div>
                             <input className='form__pageFour__text__input' type='text'
                                    onChange={e => setCodePost(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{codePostErr}</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Numer telefonu</div>
                             <input className='form__pageFour__text__input' type='text'
                                    onChange={e => setTelNum(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{numTelErr}</div>
                     </div>
                     <div className='form__pageFour__firstTable'>
                         <div className='form__pageFour__text'>Termin odbioru:</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Data</div>
-                            <input className='form__pageFour__text__input' type='text'
+                            <input className='form__pageFour__text__input' type='date'
                                    onChange={e => setData(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{dataErr}</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Godzina</div>
-                            <input className='form__pageFour__text__input' type='text'
+                            <input className='form__pageFour__text__input' type='time'
                                    onChange={e => setHour(e.target.value)}/>
                         </div>
+                        <div className='form__pageFour__validation'>{hourErr}</div>
                         <div className='form__pageFour__text__cont'>
                             <div className='form__pageFour__text__content'>Uwagi dla kuriera</div>
                             <textarea className='form__pageFour__text__textarea'
@@ -382,7 +471,12 @@ const FormSection = () => {
                 </div>
 
                 <button className="form__pageFour__btn" onClick={handleBtnBackPageFour}>Wstecz</button>
-                <button className="form__pageFour__btnNext" onClick={handleBtnNextPageFour}>Dalej</button>
+                <button className="form__pageFour__btnNext" onClick={handleBtnNextPageFour} style={
+                    {
+                        borderColor: border
+                    }
+                }>Dalej
+                </button>
             </div>
             <div className='form__pageSummary' style={
                 {
