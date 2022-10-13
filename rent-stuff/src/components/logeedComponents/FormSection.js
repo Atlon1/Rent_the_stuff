@@ -3,6 +3,11 @@ import '../../scss/main.scss';
 import shirt from '../../assets/Icon-1.svg';
 import Rows from '../../assets/Icon-4.svg';
 import decoration from '../../assets/Decoration.svg';
+import {db} from "../../Firebase";
+import {collection, addDoc} from "firebase/firestore";
+
+
+
 
 
 const FormSection = () => {
@@ -83,6 +88,7 @@ const FormSection = () => {
         return null
     }
 
+    const usersCollectionRef = collection(db, "users")
 
     const [radioErr, setRadioErr] = useState(null);
     const [selectErr, setSelectErr] = useState(null);
@@ -140,6 +146,7 @@ const FormSection = () => {
             setYellowPara('Wszystkie rzeczy do oddania zapakuj w 60l worki. Dokładną instrukcję jak poprawnie spakować rzeczy znajdziesz TUTAJ!')
             setViewDisplayOnePage('none');
             setViewDisplayTwoPage('block');
+            setRadioErr('')
             setBorder('black');
         }
     }
@@ -155,6 +162,7 @@ const FormSection = () => {
             setViewDisplayTwoPage('none');
             setViewDisplayThirdPage('block');
             setBorder('black');
+            setSelectErr("");
         }
     }
 
@@ -163,7 +171,7 @@ const FormSection = () => {
             "                        będziemy wiedzieć komu najlepiej je przekazać.");
         setViewDisplayOnePage('block');
         setViewDisplayTwoPage('none');
-        setRadioErr("");
+        setSelectErr("");
         setBorder('black')
     }
     const handleBtnNextPageThird = async (e) => {
@@ -178,6 +186,9 @@ const FormSection = () => {
             setYellowPara('Podaj adres oraz termin odbioru rzeczy.');
             setViewDisplayThirdPage('none');
             setViewDisplayFourPage('block');
+            setLocalizationErr('')
+            setWhoHelpErr('')
+            setBorder('black')
         }
 
     }
@@ -249,7 +260,21 @@ const FormSection = () => {
         setBorder('black')
     }
 
-    const handleBtnNextPageSummary = () => {
+    const handleBtnNextPageSummary = async (e) => {
+        e.preventDefault()
+        await addDoc(usersCollectionRef, {CoOddajesz: radio,
+            IleWorkow: selectItem,
+            Lokalizacja: localization,
+            KomuPomozesz: whoHelp,
+            KonkretnaOrganizacja: curentOrg,
+            Ulica: street,
+            Miasto: city,
+            KodPocztowy: codePost,
+            NumerTelefonu: telNum,
+            Data: data,
+            Godzina: hour,
+            Uwagi: warning
+            })
         setViewDisplayEndPage('block');
         setViewDisplaySummaryPage('none');
     }
