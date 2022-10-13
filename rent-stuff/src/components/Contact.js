@@ -3,6 +3,8 @@ import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import facebook from '../assets/Facebook.svg';
 import instagram from '../assets/Instagram.svg';
+import {db} from "../Firebase";
+import {collection, addDoc} from "firebase/firestore";
 
 
 const Contact = () => {
@@ -33,7 +35,7 @@ const Contact = () => {
         }
         return null
     }
-
+    const usersCollectionRef = collection(db, "contact")
     const [nameErr, setNameErr] = useState(null);
     const [emailErr, setEmailErr] = useState(null);
     const [textErr, setTextErr] = useState(null);
@@ -86,6 +88,11 @@ const Contact = () => {
         setEmailErr('')
         setTextErr('')
         setBorderColor('1px solid black')
+            await addDoc(usersCollectionRef,
+                {Name: form.name,
+                Email: form.email,
+                Content: form.text
+            })
         return setAgree(
             <div className="Form_validate"
                  style={
