@@ -7,7 +7,6 @@
   height: 95px;
 
 
-
   .wrapper {
     display: flex;
     padding-right: 15px;
@@ -68,7 +67,7 @@
   .navigation__list__container {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-end;
     margin-right: 122px;
 
     @include mobile {
@@ -85,11 +84,20 @@
     .navigation__list__container__first {
       display: flex;
       margin-bottom: 15px;
-      
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
     }
 
     .navigation__list__container__sec {
       display: flex;
+      @include mobile {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+      }
     }
 
     .list__item {
@@ -100,6 +108,7 @@
       height: 42px;
       transition: 2s;
       color: $color-five;
+      text-align: center;
 
       &__sec {
         transition: 2s;
@@ -181,4 +190,7 @@
 a {
   color: black;
   text-decoration: none;
+  @include tablet {
+    font-size: 18px;
+  }
 }

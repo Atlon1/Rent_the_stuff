@@ -29,7 +29,7 @@ const Navigation = () => {
                                     </div>
                                 </li>
                             </div>
-                            <div className='navigation__list__container__first'>
+                            <div className='navigation__list__container__sec'>
                             <li className='list__item'>
                                 <div className='list__link'>
                                     <Link className='list__item__sec' to='/'>Start</Link>
