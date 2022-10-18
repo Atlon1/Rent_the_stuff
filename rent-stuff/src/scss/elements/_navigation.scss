@@ -23,6 +23,7 @@
     z-index: 2;
 
 
+
     .navigation__login__login {
       text-decoration: none;
       padding: 10px 9px;
@@ -35,6 +36,12 @@
       margin-left: 10px;
       &:hover{
         border: 1px solid #FAD648;
+      }
+      @include tablet {
+        font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+      }
+      @include mobile {
+        font-size: calc(15px + 6 * ((100vw - 320px) / 680));;
       }
     }
 
@@ -51,6 +58,12 @@
       margin-left: 10px;
       &:hover{
         border: 1px solid #FAD648;
+      }
+      @include tablet {
+        font-size: calc(12px + 6 * ((100vw - 320px) / 680));
+      }
+      @include mobile {
+        font-size: calc(15px + 6 * ((100vw - 320px) / 680));;
       }
     }
   }
@@ -110,11 +123,18 @@
       color: $color-five;
       text-align: center;
 
+      @include mobile {
+        padding: 0;
+        justify-content: center;
+
+      }
+
       &__sec {
         transition: 2s;
       }
       &:hover {
         border: 1px solid #3C3C3C;
+
       }
     }
     .list__item__login {
@@ -125,6 +145,11 @@
       height: 42px;
       transition: 2s;
       color: $color-five;
+      @include mobile {
+        padding: 0;
+        justify-content: center;
+
+      }
     }
   }
   .menu__btn {
@@ -191,6 +216,9 @@ a {
   color: black;
   text-decoration: none;
   @include tablet {
-    font-size: 18px;
+    font-size: calc(10px + 6 * ((100vw - 320px) / 680));
+    @include mobile {
+      font-size: calc(15px + 6 * ((100vw - 320px) / 680));;
+    }
   }
 }
