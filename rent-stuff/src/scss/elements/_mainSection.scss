@@ -21,9 +21,18 @@
       width: 885px;
       max-width: 100%;
       height: 900px;
+      transition: 1s;
+
     }
     @include tablet {
-      
+    scale: 0.9;
+      bottom: -50px;
+      right: 50px;
+      background-position: center;
+      background-size: auto;
+    }
+    @include mobile {
+      background-size: auto;
     }
 
   }
@@ -38,7 +47,13 @@
     align-items: center;
     @include tablet {
       margin-top: 110px;
-      margin-right: 150px;
+      margin-right: 10px;
+    }
+    @include mobile {
+      margin-top: 25px;
+      margin-right: 0;
+      left: 50px;
+      top: -30px;
     }
 
     h1 {
@@ -46,6 +61,10 @@
       height: 107px;
       text-align: center;
       line-height: 140%;
+      @include tablet {
+        font-size: calc(25px + 6 * ((100vw - 320px) / 680));;
+
+      }
     }
 
     .decoration {
@@ -53,6 +72,11 @@
       height: 33px;
       margin-top: 25px;
       margin-bottom: 65px;
+      @include tablet {
+        width: 50%;
+        height: 50%;
+
+      }
     }
   }
   .button__container {
@@ -60,7 +84,7 @@
     margin-right: 10px;
 
 
-    .big-btn {
+    .button__container__btn {
       font-family: 'Open Sans', sans-serif;
       display: flex;
       width: 300px;
@@ -68,13 +92,32 @@
       justify-content: center;
       align-items: center;
       background-color: #FFFFFF;
-      font-size: 36px;
+      font-size: calc(36px + 6 * ((100vw - 320px) / 680));
       color: #3C3C3C;
       font-weight: lighter;
 
+      @include tablet {
+        width: 25vw;
+        height: 10vh;
+        font-size: calc(20px + 6 * ((110vw - 320px)/ 680));
+
+      }
+      @include mobile {
+        flex-direction: row;
+      }
       &:first-child {
         margin-right: 40px;
       }
+    }
+  }
+  a {
+    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+
+    @include tablet {
+      font-size: calc(15px + 9 * ((110vw - 320px)/ 680));
+    }
+    @include mobile {
+      font-size: calc(12px + 9 * ((110vw - 320px)/ 680));
     }
   }
 }

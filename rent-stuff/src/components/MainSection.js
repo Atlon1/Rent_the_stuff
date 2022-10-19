@@ -14,8 +14,8 @@ const MainSection = () => {
                     <h1> Zacznij pomagać! <br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
                     <img className='decoration' src={decoration}/>
                     <div className='button__container'>
-                        <button className="big-btn"><Link to="Login">ODDAJ<br/>RZECZY</Link></button>
-                        <button className="big-btn"><Link to="Login">ZORGANIZUJ<br/>ZBIÓRKĘ</Link></button>
+                        <button className="button__container__btn"><Link to="Login">ODDAJ<br/>RZECZY</Link></button>
+                        <button className="button__container__btn"><Link to="Login">ZORGANIZUJ<br/>ZBIÓRKĘ</Link></button>
                     </div>
                 </div>
             </div>
