@@ -20,20 +20,6 @@ const NavigationLoginIn = () => {
         <section className='navigation' id='navigation'>
             <div className='wrapper'>
                 <div className='navigation__container'>
-                    <div className='navigation__login'>
-                        <div className='navigation__login__login' style={
-                            {
-                                fontWeight: '700'
-                            }
-                        }>Cześć! {user.email}</div>
-
-                        <Link className='navigation__login__login' style={
-                            {
-                                fontWeight: '700'
-                            }
-                        } to="/UserLoginInHome/FormSection"> Oddaj rzeczy</Link>
-                        <button className='navigation__login__register' onClick={() => signOutClick()}>Wyloguj</button>
-                    </div>
                     <div className='navigation__section'>
                         <input type='checkbox' className='menu__btn' id="menu__btn"/>
                         <label htmlFor='menu__btn' className='menu__toggle'>
@@ -42,31 +28,49 @@ const NavigationLoginIn = () => {
                             <span/>
                         </label>
                         <ul className='navigation__list__container'>
-                            <li className='list__item'>
-                                <div className='list__link'>
-                                    <Link to='/UserLoginInHome'>Start</Link>
-                                </div>
-                            </li>
-                            <li className='list__item'>
-                                <div className='list__link'>
-                                    <HashLink smooth to={'#simpleSteps'}>O co chodzi?</HashLink>
-                                </div>
-                            </li>
-                            <li className='list__item'>
-                                <div className='list__link'>
-                                    <HashLink smooth to={'#aboutUs'}>O nas</HashLink>
-                                </div>
-                            </li>
-                            <li className='list__item'>
-                                <div className='list__link'>
-                                    <HashLink smooth to={'#whoHelp'}>Fundacja i organizacje</HashLink>
-                                </div>
-                            </li>
-                            <li className='list__item'>
-                                <div className='list__link'>
-                                    <HashLink smooth to={'#contact'}>Kontakt</HashLink>
-                                </div>
-                            </li>
+                            <div className='navigation__list__container__first'>
+                                <li className='list__item__login'>
+                                     <div className='navigation__login__login' style={
+                                    {
+                                        fontWeight: '700'
+                                    }
+                                }>Cześć! {user.email}</div>
+                                </li>
+                                <li className='list__item__login'>
+                                    <div className='list__link__login'>
+                                        <Link className='navigation__login__register' to="/Register"> Załóż konto</Link>
+                                    </div>
+                                </li>
+                            </div>
+                            <div className='navigation__list__container__sec'>
+                                <li className='list__item'>
+                                    <div className='list__link'>
+                                        <Link className='list__item__sec' to='/'>Start</Link>
+                                    </div>
+                                </li>
+                                <li className='list__item'>
+                                    <div className='list__link'>
+                                        <HashLink className='list__item__sec' smooth to={'#simpleSteps'}>O co
+                                            chodzi?</HashLink>
+                                    </div>
+                                </li>
+                                <li className='list__item'>
+                                    <div className='list__link'>
+                                        <HashLink className='list__item__sec' smooth to={'#aboutUs'}>O nas</HashLink>
+                                    </div>
+                                </li>
+                                <li className='list__item'>
+                                    <div className='list__link'>
+                                        <HashLink className='list__item__sec' smooth to={'#whoHelp'}>Fundacja i
+                                            organizacje</HashLink>
+                                    </div>
+                                </li>
+                                <li className='list__item'>
+                                    <div className='list__link'>
+                                        <HashLink className='list__item__sec' smooth to={'#contact'}>Kontakt</HashLink>
+                                    </div>
+                                </li>
+                            </div>
                         </ul>
                     </div>
                 </div>
@@ -76,3 +80,9 @@ const NavigationLoginIn = () => {
 }
 
 export default NavigationLoginIn;
+
+// <div className='navigation__login__login' style={
+//     {
+//         fontWeight: '700'
+//     }
+// }>Cześć! {user.email}</div>
