@@ -5,19 +5,23 @@ import backgorundThree from '../assets/3 Columns Background.png'
 const ThreeColumn = () => {
 
     const [bag, setbag] = useState(0);
+    const [organization, setOrganization] = useState(0)
+    const [grab, setGrab] = useState(0)
 
 
     useEffect(() => {
+
         const interval = setInterval(() => {
-                setbag(prevState => prevState + 1)
+            setbag((bag > 10 ? prevState => prevState + 1 : 10))
+            setOrganization((organization > 5 ? prevState => prevState + 1 : 5 ))
+            setGrab((grab > 10 ? prevState => prevState + 1 : 10 ))
         }, 100)
-        if (bag > 10){
-            return () => {
-                clearInterval(interval)
-            }
+        return () => {
+            clearInterval(interval)
         }
 
-    },[])
+    }, [])
+
 
     return (
         <section className='three__column'>
@@ -28,19 +32,22 @@ const ThreeColumn = () => {
                         <div className='three__column__firstCont'>
                             <h2>{bag}</h2>
                             <h3>ODDANYCH WORKÓW</h3>
-                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc
+                                Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
                         </div>
                         <div className='three__column__secCont'>
-                            <h2>5</h2>
+                            <h2>{organization}</h2>
                             <h3>WSPARTYCH ORGANIZACJI</h3>
-                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc
+                                Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
                         </div>
                         <div className='three__column__thirdCont'>
-                            <h2>10</h2>
+                            <h2>{grab}</h2>
                             <h3>ZORGANIZOWANYCH ZBIÓREK</h3>
-                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc Pellentesque vel enim a elit viverra
+                            <p className='three__column__text'>Lorem ipsum dolor sit amet, consectetur adipisc
+                                Pellentesque vel enim a elit viverra
                                 elementuma. Aliquam erat volutpat.</p>
                         </div>
                     </div>
