@@ -13,64 +13,85 @@
     position: relative;
     display: flex;
     justify-content: center;
-    width: 1900px;
+    max-width: 100%;
     height: 384px;
+    @include tablet {
 
+      height: 100%
+    }
   }
 
   .three__column__background {
     position: absolute;
     display: block;
     max-width: 100%;
+    max-height: 650px;
     height: 384px;
+    @include tablet {
+
+      height: 100%
+    }
   }
 
   .three__column__description {
     z-index: 1;
     display: flex;
     align-items: center;
+    height: 384px;
+    width: 100vw;
+    justify-content: space-between;
+    margin-left: 150px;
+    margin-right: 150px;
 
+    @include tablet {
+      flex-direction: column;
+      height: auto;
+      margin-bottom: 8%;
+    }
   }
 
   .three__column__firstCont {
     width: 334px;
-    height: 252px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-left: 163px;
+    text-align: center;
+    @include tablet {
+      margin-top: 8%;
+
+    }
   }
 
   .three__column__secCont {
     width: 334px;
-    height: 252px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0 286px;
+
+    text-align: center;
   }
 
   .three__column__thirdCont {
     width: 334px;
-    height: 252px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-right: 163px;
+
+    text-align: center;
   }
 }
 
 h2 {
-  font-size: 90px;
+  font-size: calc(22px + 26 * ((100vw - 320px) / 680));
   color: $color-sec;
   font-weight: 100;
 }
 
 h3 {
-  font-size: 18px;
+  font-size: calc(15px + 3 * ((100vw - 320px) / 680));
   color: $color-five;
   font-weight: 600;
   margin-bottom: 28px;
@@ -79,7 +100,7 @@ h3 {
 
 .three__column__text {
   text-align: center;
-  font-size: 16px;
+  font-size: calc(10px + 3 * ((100vw - 320px) / 680));
   font-weight: 300;
   line-height: 25px;
 }

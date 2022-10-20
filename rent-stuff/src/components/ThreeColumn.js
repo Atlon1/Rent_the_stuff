@@ -26,8 +26,9 @@ const ThreeColumn = () => {
     return (
         <section className='three__column'>
             <div className='wrapper'>
-                <img className='three__column__background' src={backgorundThree} alt='backgorund'/>
+
                 <div className='three__column__container'>
+                    <img className='three__column__background' src={backgorundThree} alt='backgorund'/>
                     <div className='three__column__description'>
                         <div className='three__column__firstCont'>
                             <h2>{bag}</h2>
