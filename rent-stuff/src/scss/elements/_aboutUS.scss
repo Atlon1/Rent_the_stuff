@@ -12,6 +12,10 @@
     display: flex;
     width: 1900px;
     height: 935px;
+    @include tablet {
+      flex-direction: column;
+      height: 100%;
+    }
   }
 
   &__content {
@@ -20,23 +24,37 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 958px;
+    width: 50%;
     position: relative;
+    padding: 0 75px;
+    @include tablet {
+      padding: 0 50px;
+      width: 100%;
+    }
+    @include mobile {
+      padding: 0 10px;
+    }
   }
 
   h5 {
-    font-size: 38px;
+    font-size: calc(15px + 5 * ((100vw - 320px) / 680));
     margin-bottom: 26px;
     font-weight: 400;
+    @include mobile {
+      margin-top: 25px;
+    }
   }
 
   &__decoration {
     margin-bottom: 55px;
+    width: 253px;
+    height: 33px;
+
   }
 
   &__text {
-    font-size: 25px;
-    width: 550px;
+    font-size: calc(12px + 5 * ((100vw - 320px) / 680));;
+    width: auto;
     height: 209px;
     text-align: center;
     line-height: 45px;
@@ -44,11 +62,24 @@
 
   &__signature {
     position: absolute;
-    top: 650px;
-    right: 220px;
+    top: 65%;
+    right: 20%;
+    max-width: 210px;
+    width: 25%;
+    @include tablet {
+      width: 15%;
+      height: auto;
+      top: 65%;
+    }
+
   }
 
   &__people {
-    width: 942px;
+    display: block;
+    width: 50%;
+    height: auto;
+    @include tablet {
+      width: 100%;
+    }
   }
 }

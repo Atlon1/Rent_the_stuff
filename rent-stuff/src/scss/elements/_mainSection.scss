@@ -24,8 +24,9 @@
       transition: 1s;
 
     }
+
     @include tablet {
-    scale: 0.9;
+      scale: 0.9;
       bottom: -50px;
       right: 50px;
       background-position: center;
@@ -75,10 +76,10 @@
       @include tablet {
         width: 50%;
         height: 50%;
-
       }
     }
   }
+
   .button__container {
     display: flex;
     margin-right: 10px;
@@ -99,25 +100,27 @@
       @include tablet {
         width: 25vw;
         height: 10vh;
-        font-size: calc(20px + 6 * ((110vw - 320px)/ 680));
+        font-size: calc(20px + 6 * ((110vw - 320px) / 680));
 
       }
       @include mobile {
         flex-direction: row;
       }
+
       &:first-child {
         margin-right: 40px;
       }
     }
   }
+
   a {
     font-size: calc(20px + 6 * ((100vw - 320px) / 680));
 
     @include tablet {
-      font-size: calc(15px + 9 * ((110vw - 320px)/ 680));
+      font-size: calc(15px + 9 * ((110vw - 320px) / 680));
     }
     @include mobile {
-      font-size: calc(12px + 9 * ((110vw - 320px)/ 680));
+      font-size: calc(12px + 9 * ((110vw - 320px) / 680));
     }
   }
 }
