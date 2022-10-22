@@ -19,8 +19,8 @@ const SimpleSteps = () => {
         <section className='simpleSteps' id='simpleSteps'>
             <div className='wrapper'>
                 <div className='simpleSteps__container'>
-                    <h4>Wystarczą 4 proste kroki</h4>
-                    <img className='simpleSteps__decoration' src={decoration} alt='decoration'/>
+                    <h4 data-aos="fade-up-left">Wystarczą 4 proste kroki</h4>
+                    <img data-aos="fade-up-right" className='simpleSteps__decoration' src={decoration} alt='decoration'/>
                     <div className='simpleSteps__content'>
                         <div className='simpleSteps__firstContent'>
                             <img data-aos="fade-up" className='simpleSteps__icon1' src={icon1} alt='shirt'/>

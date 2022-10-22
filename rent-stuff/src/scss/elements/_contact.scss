@@ -34,9 +34,12 @@
     margin-left: auto;
     align-items: center;
     width: 520px;
+    @include tablet {
+      margin-right: 0;
+    }
   }
   h6 {
-    font-size: 38px;
+    font-size: calc(15px + 5 * ((100vw - 320px) / 680));
   }
 
   &__decoration {
@@ -55,9 +58,7 @@
     width: 100%;
     height: 62px;
     margin: 8px;
-
     background: none;
-
   }
   &__textarea {
     margin: 20px 8px 0 8px;
@@ -96,22 +97,32 @@
     margin-right: 205px;
     margin-left: 100%;
     background-color: white;
-
+      @include  tablet{
+        margin-right: 0;
+        margin-left: 60%;
+      }
   }
 
   &__fotter {
     z-index: 1;
     display: flex;
     margin-top: 240px;
+    padding: 0 150px;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
+    @include mobile {
+      flex-direction: column;
+      padding: 0 ;
+    }
   }
   &__fbIN{
     position: relative;
-    left: 587px;
+    padding-left: 15px;
+    margin-top: 15px;
+
   }
   &__facebook {
     margin-right: 20px;
-  }
 
+  }
 }

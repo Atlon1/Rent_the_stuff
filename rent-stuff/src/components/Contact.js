@@ -1,10 +1,13 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import facebook from '../assets/Facebook.svg';
 import instagram from '../assets/Instagram.svg';
 import {db} from "../Firebase";
 import {collection, addDoc} from "firebase/firestore";
+import Aos from "aos";
+import "aos/dist/aos.css";
+
 
 
 const Contact = () => {
@@ -46,6 +49,10 @@ const Contact = () => {
     });
     const [borderColor, setBorderColor] = useState('1px solid black');
     const [agree, setAgree] = useState(<div/>)
+
+    useEffect(() => {
+        Aos.init({duration: 1000})
+    },[])
 
 
     const updateField = e => {
@@ -111,11 +118,11 @@ const Contact = () => {
     }
 
     return (
-        <section className='contact' id='contact'>
+        <section  className='contact' id='contact'>
             <div className='wrapper'>
                 <div className='contact__container'>
                     <div className='contact__background'/>
-                    <div className='contact__content'>
+                    <div data-aos='slide-right' className='contact__content'>
                         <h6>Skontaktuj się z nami</h6>
                         <img src={decoration} className='contact__decoration' alt='decoration'/>
                         {agree}
@@ -124,7 +131,7 @@ const Contact = () => {
                                 <div className='contact__input'
                                      style={
                                          {
-                                             borderBottom: borderColor,
+                                             borderBottom: (!nameErr ? "1px solid black" : borderColor),
                                              margin: "8px"
                                          }
                                      }>
@@ -199,7 +206,7 @@ const Contact = () => {
                     </div>
                 </div>
                 <div className='contact__fotter'>
-                    <div className='contact__copywrite'>Copyright by Atlon</div>
+                    <div className='contact__copywrite'>Copyright by Maciej Szajstek</div>
                     <div className='contact__fbIN'>
                         <img src={facebook} className='contact__facebook' alt='facebook'/>
                         <img src={instagram} className='contact__instagram' alt='instagram'/>
