@@ -71,6 +71,9 @@
       height: auto;
       top: 65%;
     }
+    @include mobile {
+      top: 80%
+    }
 
   }
 

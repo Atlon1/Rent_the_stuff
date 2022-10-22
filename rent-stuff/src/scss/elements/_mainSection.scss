@@ -63,7 +63,7 @@
       text-align: center;
       line-height: 140%;
       @include tablet {
-        font-size: calc(25px + 6 * ((100vw - 320px) / 680));;
+        font-size: calc(20px + 6 * ((100vw - 320px) / 680));;
 
       }
     }

@@ -52,8 +52,14 @@
     width: auto;
 
     .simpleSteps__icon1 {
-      width: 83px;
-      height: 83px;
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      @include mobile {
+        width: 50%;
+        margin-top: 15px;
+      }
     }
 
     .simpleSteps__header {
@@ -86,8 +92,14 @@
     width: auto;
 
     .simpleSteps__icon2 {
-      width: 83px;
-      height: 83px;
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      @include mobile {
+        width: 40%;
+        margin-top: 15px;
+      }
     }
 
     .simpleSteps__header {
@@ -119,8 +131,14 @@
     width: auto;
 
     .simpleSteps__icon3 {
-      width: 83px;
-      height: 83px;
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      @include mobile {
+        width: 50%;
+        margin-top: 15px;
+      }
     }
 
     .simpleSteps__header {
@@ -153,8 +171,14 @@
     width: auto;
 
     .simpleSteps__icon4 {
-      width: 83px;
-      height: 83px;
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      @include mobile {
+        width: 40%;
+        margin-top: 15px;
+      }
     }
 
     .simpleSteps__header {
@@ -194,5 +218,12 @@
   @include tablet {
     width: 25vw;
     height: 10vh;
+  }
+  .simpleSteps__content__firstCont{
+  display: flex;
+    flex-direction: column;
+  }
+  .simpleSteps__content__secCont {
+
   }
 }

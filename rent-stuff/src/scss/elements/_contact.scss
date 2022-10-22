@@ -22,7 +22,9 @@
   opacity: 50%;
     background: url("../../assets/Background-Contact-Form.jpg")  no-repeat;
     z-index: -1;
-
+    @include mobile {
+     height: 1112px;
+    }
   }
 
   &__content{
@@ -33,7 +35,8 @@
     margin-right: 142px;
     margin-left: auto;
     align-items: center;
-    width: 520px;
+    max-width: 520px;
+    width: 100%;
     @include tablet {
       margin-right: 0;
     }
@@ -44,21 +47,30 @@
 
   &__decoration {
     margin-top: 25px;
-    width: 253px;
+    max-width: 253px;
+    width: 100%;
     height: 33px;
     margin-bottom: 70px;
   }
   &__formCont {
     display: flex;
+    max-width: 219px;
+    width: 100%;
+    @include mobile {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__input {
     display: flex;
     flex-direction: column;
+    max-width: 219px;
     width: 100%;
     height: 62px;
     margin: 8px;
     background: none;
+
   }
   &__textarea {
     margin: 20px 8px 0 8px;
@@ -101,6 +113,9 @@
         margin-right: 0;
         margin-left: 60%;
       }
+    @include mobile {
+      margin-left: 20%;
+    }
   }
 
   &__fotter {

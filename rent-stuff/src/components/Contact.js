@@ -153,7 +153,7 @@ const Contact = () => {
                                 <div className='contact__input'
                                      style={
                                          {
-                                             borderBottom: borderColor,
+                                             borderBottom: (!emailErr ? "1px solid black" : borderColor),
                                              margin: "8px"
                                          }
                                      }>
@@ -176,7 +176,7 @@ const Contact = () => {
                             <div className='contact__textarea'
                                  style={
                                      {
-                                         borderBottom: borderColor,
+                                         borderBottom: (!textErr ? "1px solid black" : borderColor),
                                      }
                                  }>
                                 <label>Wpisz swoją wiadomość</label>

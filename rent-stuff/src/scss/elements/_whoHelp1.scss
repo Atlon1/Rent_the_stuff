@@ -117,6 +117,9 @@
     font-size: calc(12px + 3 * ((100vw - 320px) / 680));
     margin-top: 6px;
     color: #3C3C3C;
+    @include mobile {
+      margin-top: 25px;
+    }
   }
 
   &__wichHelp {
@@ -125,6 +128,9 @@
     right: 10px;
     font-size: calc(10px + 2 * ((100vw - 320px) / 680));
     color: #3C3C3C;
+    @include mobile {
+      margin-top: 15px;
+    }
   }
 
   .paginationBttns {
