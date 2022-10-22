@@ -46,20 +46,20 @@ const LoginSection = () => {
     const handleSubmit = async (e) =>{
         e.preventDefault()
         const emailError = validateEmail(form)
-        if (emailError ) {
-            setEmailErr(emailError )
-            setBorderColor('1px solid red')
-        }
         const passError = validatePassword(form)
-        if (passError) {
+        if (emailError || passError ) {
+            setEmailErr(emailError )
             setPasswordErr(passError)
             setBorderColor('1px solid red')
-            return
-        }
+        } else {
+        setEmailErr('');
+        setPasswordErr('');
+
         signInWithEmailAndPassword(auth, form.email, form.password)
             .then((auth)=>{navigate('/UserLoginInHome')})
             .catch(error=>console.error(error))
         console.log('form submited')
+        }
     }
 
 
@@ -73,7 +73,7 @@ const LoginSection = () => {
                         <div className='login__email'
                              style={
                                  {
-                                     borderBottom: borderColor
+                                     borderBottom: (!emailErr ? 'solid 1px black' : borderColor)
                                  }
                              }>
                         <label>Email</label>

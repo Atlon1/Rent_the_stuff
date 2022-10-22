@@ -39,6 +39,7 @@
   }
 
   .mainSection__container {
+    width: 32vw;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -49,23 +50,21 @@
     @include tablet {
       margin-top: 110px;
       margin-right: 10px;
+      width: 40vw;
     }
     @include mobile {
       margin-top: 25px;
       margin-right: 0;
-      left: 50px;
+      left: 40px;
       top: -30px;
     }
 
     h1 {
-      font-size: 38px;
+      font-size:calc(20px + 6 * ((100vw - 320px) / 680));;
       height: 107px;
       text-align: center;
       line-height: 140%;
-      @include tablet {
-        font-size: calc(20px + 6 * ((100vw - 320px) / 680));;
 
-      }
     }
 
     .decoration {
@@ -73,10 +72,6 @@
       height: 33px;
       margin-top: 25px;
       margin-bottom: 65px;
-      @include tablet {
-        width: 50%;
-        height: 50%;
-      }
     }
   }
 
@@ -123,4 +118,8 @@
       font-size: calc(12px + 9 * ((110vw - 320px) / 680));
     }
   }
+}
+
+span {
+  visibility: hidden;
 }

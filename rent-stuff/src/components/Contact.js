@@ -75,7 +75,6 @@ const Contact = () => {
             setTextErr(textError)
             setBorderColor('1px solid red')
         } else  {
-        console.log('form submited', form)
 
         fetch(`${API}`,{
             method: "POST",
