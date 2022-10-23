@@ -17,7 +17,7 @@
 
   &__background {
     width: 100%;
-    height: 1026px;
+    height: 1110px;
   position: absolute;
   opacity: 50%;
     background: url("../../assets/Background-Contact-Form.jpg")  no-repeat;
@@ -64,19 +64,20 @@
   }
   &__formCont {
     display: flex;
-    max-width: 219px;
+    max-width: 530px;
     width: 100%;
     transition: 2s;
     @include mobile {
       flex-direction: column;
       align-items: center;
+      width: 100%;
     }
   }
 
   &__input {
     display: flex;
     flex-direction: column;
-    max-width: 219px;
+    max-width: 512px;
     width: 100%;
     height: 62px;
     margin: 8px;
@@ -104,12 +105,15 @@
 
   textarea {
     margin-top: 15px;
-    width: 100%;
     height: 106px;
+    width: 520px;
     font-size: 15px;
     text-align: left;
     border: 0;
     opacity: 40%;
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__submit {
@@ -133,7 +137,7 @@
   &__fotter {
     z-index: 1;
     display: flex;
-    margin-top: 240px;
+    margin-top: 280px;
     padding: 0 150px;
     align-items: center;
     justify-content: space-between;

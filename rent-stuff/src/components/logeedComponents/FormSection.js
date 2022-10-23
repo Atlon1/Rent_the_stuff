@@ -1,13 +1,12 @@
-import React, {useState} from "react";
+import React, {useState,useEffect} from "react";
 import '../../scss/main.scss';
 import shirt from '../../assets/Icon-1.svg';
 import Rows from '../../assets/Icon-4.svg';
 import decoration from '../../assets/Decoration.svg';
 import {db} from "../../Firebase";
 import {collection, addDoc} from "firebase/firestore";
-
-
-
+import Aos from "aos";
+import "aos/dist/aos.css";
 
 
 const FormSection = () => {
@@ -133,6 +132,10 @@ const FormSection = () => {
     const [viewDisplayFourPage, setViewDisplayFourPage] = useState('none');
     const [viewDisplaySummaryPage, setViewDisplaySummaryPage] = useState('none');
     const [viewDisplayEndPage, setViewDisplayEndPage] = useState('none');
+
+    useEffect(() => {
+        Aos.init({duration: 1000})
+    }, [])
 
 
     const handleBtnNextPageOne = async (e) => {
@@ -288,7 +291,7 @@ const FormSection = () => {
 
     return (<section className='form'>
         <div className="wrapper">
-            <div className='form__yellowBar' style={
+            <div data-aos="fade-up-left" className='form__yellowBar' style={
                 {
                     display: viewDisplayYellowBar
                 }
@@ -296,12 +299,12 @@ const FormSection = () => {
                 <div className='form__yellowBar__header'>{yellowHeader}</div>
                 <div className='form__yellowBar__content'>{yellowPara}</div>
             </div>
-            <div className='form__pageOne' style={
+            <div data-aos="fade-up-right" className='form__pageOne' style={
                 {
                     display: viewDisplayOnePage
                 }
             }>
-                <div className='form__pageOne__steps'> Krok 1/4</div>
+                <div  className='form__pageOne__steps'> Krok 1/4</div>
                 <div className='form__pageOne__header'>Zaznacz co chcesz oddać:</div>
                 <form className='form__pageOne__formRadio'>
                     <label className='form__pageOne__radio'><input type='radio'
@@ -340,7 +343,7 @@ const FormSection = () => {
                 } onClick={handleBtnNextPageOne}>Dalej
                 </button>
             </div>
-            <div className='form__pageTwo' style={
+            <div data-aos="fade-up-down"  className='form__pageTwo' style={
                 {
                     display: viewDisplayTwoPage
                 }
@@ -368,7 +371,7 @@ const FormSection = () => {
                 } onClick={handleBtnNextPageTwo}>Dalej
                 </button>
             </div>
-            <div className='form__pageThird' style={
+            <div data-aos="fade-up-right"  className='form__pageThird' style={
                 {
                     display: viewDisplayThirdPage
                 }
@@ -438,7 +441,7 @@ const FormSection = () => {
                 </button>
 
             </div>
-            <div className='form__pageFour' style={
+            <div data-aos="fade-up-right"  className='form__pageFour' style={
                 {
                     display: viewDisplayFourPage
                 }
@@ -503,7 +506,7 @@ const FormSection = () => {
                 }>Dalej
                 </button>
             </div>
-            <div className='form__pageSummary' style={
+            <div data-aos="fade-up-right"  className='form__pageSummary' style={
                 {
                     display: viewDisplaySummaryPage
                 }
@@ -559,7 +562,7 @@ const FormSection = () => {
                 <button className="form__pageSummary__btn" onClick={handleBtnBackPageSummary}>Wstecz</button>
                 <button className="form__pageSummary__btnNext" onClick={handleBtnNextPageSummary}>Potwierdzam</button>
             </div>
-            <div className='form__pageEnd' style={
+            <div data-aos="fade-up-right"  className='form__pageEnd' style={
                 {
                     display: viewDisplayEndPage
                 }
