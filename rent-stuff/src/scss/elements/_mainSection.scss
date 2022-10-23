@@ -47,6 +47,7 @@
     margin-top: 210px;
     margin-right: 275px;
     align-items: center;
+    transition: 1s;
     @include tablet {
       margin-top: 110px;
       margin-right: 10px;
@@ -60,7 +61,7 @@
     }
 
     h1 {
-      font-size:calc(20px + 6 * ((100vw - 320px) / 680));;
+      font-size:calc(20px + 6 * ((100vw - 320px) / 680));
       height: 107px;
       text-align: center;
       line-height: 140%;
@@ -91,7 +92,7 @@
       font-size: calc(36px + 6 * ((100vw - 320px) / 680));
       color: #3C3C3C;
       font-weight: lighter;
-
+      transition: 1s;
       @include tablet {
         width: 25vw;
         height: 10vh;
@@ -109,6 +110,7 @@
   }
 
   a {
+    transition: 1s;
     font-size: calc(20px + 6 * ((100vw - 320px) / 680));
 
     @include tablet {

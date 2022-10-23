@@ -37,6 +37,7 @@
     justify-content: space-between;
     font-size: calc(15px + 4 * ((100vw - 320px) / 680));
     padding: 0 250px;
+    transition: 1s;
     @include tablet {
       padding: 0 100px;
     }
@@ -60,6 +61,7 @@
     font-weight: 400;
     text-align: center;
     cursor: pointer;
+    transition: 1s;
     @include tablet {
       width: 120%;
       height: 120%;
@@ -117,6 +119,7 @@
     font-size: calc(12px + 3 * ((100vw - 320px) / 680));
     margin-top: 6px;
     color: #3C3C3C;
+    transition: 1s;
     @include mobile {
       margin-top: 25px;
     }
@@ -128,6 +131,7 @@
     right: 10px;
     font-size: calc(10px + 2 * ((100vw - 320px) / 680));
     color: #3C3C3C;
+    transition: 1s;
     @include mobile {
       margin-top: 15px;
     }

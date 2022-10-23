@@ -22,6 +22,7 @@
   opacity: 50%;
     background: url("../../assets/Background-Contact-Form.jpg")  no-repeat;
     z-index: -1;
+    transition: 2s;
     @include mobile {
      height: 1112px;
     }
@@ -37,6 +38,7 @@
     align-items: center;
     max-width: 520px;
     width: 100%;
+    transition: 2s;
     @include tablet {
       margin-right: 0;
     }
@@ -45,6 +47,7 @@
     font-size: calc(15px + 5 * ((100vw - 320px) / 680));
   }
   &__inputCont{
+    transition: 2s;
     @include mobile {
       display: flex;
       flex-direction: column;
@@ -63,6 +66,7 @@
     display: flex;
     max-width: 219px;
     width: 100%;
+    transition: 2s;
     @include mobile {
       flex-direction: column;
       align-items: center;
@@ -116,6 +120,7 @@
     margin-right: 205px;
     margin-left: 100%;
     background-color: white;
+    transition: 2s;
       @include  tablet{
         margin-right: 0;
         margin-left: 60%;
@@ -132,6 +137,7 @@
     padding: 0 150px;
     align-items: center;
     justify-content: space-between;
+    transition: 2s;
     @include mobile {
       flex-direction: column;
       padding: 0 ;

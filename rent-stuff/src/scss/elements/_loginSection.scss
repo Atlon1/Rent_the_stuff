@@ -63,6 +63,7 @@
   max-width: 500px;
     width: 100%;
     display: flex;
+    transition: 2s;
     justify-content: space-between;
     @include mobile {
       margin: 0 15px;
