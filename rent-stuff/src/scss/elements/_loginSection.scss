@@ -10,6 +10,8 @@
 
   &__container {
     margin-top: 123px;
+    max-width: 780px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,9 +60,13 @@
 
 
   &__register {
-  width: 500px;
+  max-width: 500px;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    @include mobile {
+      margin: 0 15px;
+    }
   }
 
   &__btn {

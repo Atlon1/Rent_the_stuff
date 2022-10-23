@@ -12,7 +12,7 @@ const MainSection = () => {
 
     useEffect(() => {
         const typedFirst = new Typed(firstRef.current, {
-            strings:["Zacznij pomagać! <br/>Oddaj niechciane rzeczy w zaufane ręce...","Zacznij pomagać! <br/>Nie wyrzucaj, możesz pomóc....","Zacznij pomagać! <br/>Tylko od ciebie zależy komu chcesz pomóc!"],
+            strings:["Zacznij pomagać! <br/>Oddaj niechciane rzeczy w zaufane ręce...","Zacznij pomagać! <br/>Nie wyrzucaj, możesz pomóc....","Zacznij pomagać! <br/>Tylko od ciebie zależy komu chcesz przekazać odrobine dobra!"],
             startDelay: 0,
             typeSpeed: 20,
             backSpeed: 10,

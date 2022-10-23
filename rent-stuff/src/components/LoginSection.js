@@ -6,10 +6,11 @@ import {auth} from "../Firebase";
 import {useNavigate} from 'react-router-dom'
 import {signInWithEmailAndPassword} from "firebase/auth";
 
+
 const LoginSection = () => {
 
     const validateEmail = form => {
-        if (!form.email){
+        if (!form.email) {
             return "Podany email jest nie prawidłowy!"
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email)) {
             return "Zły e-mail!"
@@ -18,9 +19,9 @@ const LoginSection = () => {
     }
 
     const validatePassword = form => {
-        if (!form.password){
+        if (!form.password) {
             return "Podane hasło jest nie prawidłowe!"
-        } else if (form.password.length < 2){
+        } else if (form.password.length < 5) {
             return "Podane hasło jest za krótkie!"
         }
         return null
@@ -43,22 +44,23 @@ const LoginSection = () => {
 
     }
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const emailError = validateEmail(form)
         const passError = validatePassword(form)
-        if (emailError || passError ) {
-            setEmailErr(emailError )
+        if (emailError || passError) {
+            setEmailErr(emailError)
             setPasswordErr(passError)
             setBorderColor('1px solid red')
         } else {
-        setEmailErr('');
-        setPasswordErr('');
+            setEmailErr('');
+            setPasswordErr('');
 
-        signInWithEmailAndPassword(auth, form.email, form.password)
-            .then((auth)=>{navigate('/UserLoginInHome')})
-            .catch(error=>console.error(error))
-        console.log('form submited')
+            signInWithEmailAndPassword(auth, form.email, form.password)
+                .then((auth) => {
+                    navigate('/UserLoginInHome')
+                })
+                .catch(error => console.error(error))
         }
     }
 
@@ -68,7 +70,7 @@ const LoginSection = () => {
             <div className='wrapper'>
                 <div className='login__container'>
                     <div className='login__title'>Zaloguj się</div>
-                     <img src={decoration} className='login__decoration' alt='decoration'/>
+                    <img src={decoration} className='login__decoration' alt='decoration'/>
                     <form className='login__form'>
                         <div className='login__email'
                              style={
@@ -76,13 +78,13 @@ const LoginSection = () => {
                                      borderBottom: (!emailErr ? 'solid 1px black' : borderColor)
                                  }
                              }>
-                        <label>Email</label>
-                        <input
-                            type={"email"}
-                            name={'email'}
-                            onChange={updateField}
+                            <label>Email</label>
+                            <input
+                                type={"email"}
+                                name={'email'}
+                                onChange={updateField}
 
-                        />
+                            />
                             <div className='login__error' style={
                                 {
                                     color: 'red',
@@ -95,7 +97,7 @@ const LoginSection = () => {
                         <div className='login__email'
                              style={
                                  {
-                                     borderBottom: borderColor
+                                     borderBottom: (!passwordErr ? "solid 1px black" : borderColor)
                                  }
                              }>
                             <label>Hasło</label>

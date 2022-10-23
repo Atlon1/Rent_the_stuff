@@ -1,4 +1,4 @@
-import React, {useState}  from "react";
+import React, {useState} from "react";
 import '../scss/main.scss';
 import decoration from '../assets/Decoration.svg';
 import {Link} from "react-router-dom";
@@ -7,10 +7,11 @@ import {useNavigate} from 'react-router-dom'
 import {auth} from "../Firebase";
 
 
+
 const RegisterSection = () => {
 
     const validateEmail = form => {
-        if (!form.email){
+        if (!form.email) {
             return "Podany email jest nie prawidłowy!"
         } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email)) {
             return "Zły e-mail!"
@@ -19,21 +20,21 @@ const RegisterSection = () => {
     }
 
     const validatePassword = form => {
-        if (!form.password){
+        if (!form.password) {
             return "Podane hasło jest nie prawidłowe!"
-        } else if (form.password.length < 2){
+        } else if (form.password.length < 6) {
             return "Podane hasło jest za krótkie!"
         }
         return null
     }
 
     const validateRePassword = form => {
-        if (!form.password){
+        if (!form.password) {
             return "Podane hasło jest nie prawidłowe!"
-        } else if (form.password.length < 2){
+        } else if (form.password.length < 6) {
             return "Podane hasło jest za krótkie!"
         }
-        if (form.rePassword !== form.password){
+        if (form.rePassword !== form.password) {
             return 'Hasła nie są identyczne'
         }
         return null
@@ -46,7 +47,7 @@ const RegisterSection = () => {
     const [form, setForm] = useState({
         email: '',
         password: '',
-        rePassword:''
+        rePassword: ''
     })
     const navigate = useNavigate();
 
@@ -57,28 +58,24 @@ const RegisterSection = () => {
         })
     }
 
-    const handleSubmit = async (e) =>{
+    const handleSubmit = async (e) => {
         e.preventDefault()
         const emailError = validateEmail(form)
-        if (emailError ) {
-            setEmailErr(emailError )
-            setBorderColor('1px solid red')
-        }
         const passError = validatePassword(form)
-        if (passError) {
-            setPasswordErr(passError)
-            setBorderColor('1px solid red')
-        }
         const passReError = validateRePassword(form)
-        if(passReError) {
+        if (emailError || passError || passReError) {
+            setEmailErr(emailError)
+            setPasswordErr(passError)
             setPasswordReErr(passReError)
             setBorderColor('1px solid red')
-            return
+        } else {
+            createUserWithEmailAndPassword(auth, form.email, form.password)
+                .then((auth) => {
+                    navigate('/UserLoginInHome')
+                })
+                .catch(error => console.error(error))
+                if (!console.error.length < 0 ) {setPasswordReErr('Takie konto już istnieje!')}
         }
-        createUserWithEmailAndPassword(auth, form.email, form.password)
-            .then((auth)=>{navigate('/UserLoginInHome')})
-            .catch(error=>console.error(error))
-
     }
 
     return (
@@ -91,7 +88,7 @@ const RegisterSection = () => {
                         <div className='register__email'
                              style={
                                  {
-                                     borderBottom: borderColor
+                                     borderBottom: (!emailErr ? '1px solid black' : borderColor)
                                  }
                              }>
                             <label>Email</label>
@@ -113,7 +110,7 @@ const RegisterSection = () => {
                         <div className='register__email'
                              style={
                                  {
-                                     borderBottom: borderColor
+                                     borderBottom: (!emailErr ? "1px solid black" : borderColor)
                                  }
                              }>
                             <label>Hasło</label>
@@ -136,7 +133,7 @@ const RegisterSection = () => {
                         <div className='register__email'
                              style={
                                  {
-                                     borderBottom: borderColor
+                                     borderBottom: (!passwordReErr ? "1px solid black" : borderColor)
                                  }
                              }>
                             <label>Powtórz Hasło</label>

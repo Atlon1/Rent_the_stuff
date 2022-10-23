@@ -38,14 +38,14 @@ const NavigationLoginIn = () => {
                                 </li>
                                 <li className='list__item__login'>
                                     <div className='list__link__login'>
-                                        <Link className='navigation__login__register' to="/Register"> Załóż konto</Link>
+                                        <button className='navigation__login__register' onClick={signOutClick}> Wyloguj</button>
                                     </div>
                                 </li>
                             </div>
                             <div className='navigation__list__container__sec'>
                                 <li className='list__item'>
                                     <div className='list__link'>
-                                        <Link className='list__item__sec' to='/'>Start</Link>
+                                        <Link className='list__item__sec' to='/UserLoginInHome'>Start</Link>
                                     </div>
                                 </li>
                                 <li className='list__item'>

@@ -1,6 +1,5 @@
 import React from "react";
 import '../../scss/main.scss';
-import {Link} from "react-router-dom";
 import decoration from "../../assets/Decoration.svg";
 
 
