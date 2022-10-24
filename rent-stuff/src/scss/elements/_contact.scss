@@ -144,7 +144,8 @@
     transition: 2s;
     @include mobile {
       flex-direction: column;
-      padding: 0 ;
+      padding: 0;
+      margin-top: 200px;
     }
   }
   &__fbIN{

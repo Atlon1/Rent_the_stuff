@@ -21,6 +21,9 @@
       width: 885px;
       height: 900px;
       transition: 2s;
+      @include notebook {
+        opacity: 50%;
+      }
       @include tablet {
         max-width: 885px;
         width: 100%;
