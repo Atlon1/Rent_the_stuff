@@ -24,4 +24,4 @@
 * React: react-router, react-router-dom, react-firebase-hooks/auth, react-router-hash-link, react-paginate, framer-motion, prop-types
 * Context API
 
-## See this project <a href="https://github.com/Atlon1/Rent_the_stuff/tree/main/rent-stuff">here -></a>
+## See this project <a href="https://atlon1.github.io/Rent_the_stuff/UserLoginInHome">here -></a>
