@@ -1,0 +1,121 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.mainSectionForm {
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .mainSection_imgForm {
+      position: absolute;
+      background-image: url("../../assets/Form-Hero-Image.jpg");
+      bottom: -130px;
+      left: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: right;
+      width: 885px;
+      height: 900px;
+      transition: 2s;
+      @include notebook {
+        opacity: 50%;
+      }
+      @include tablet {
+        max-width: 885px;
+        width: 100%;
+        max-height: 900px;
+        height: auto;
+        top: -150px;
+        opacity: 50%;
+      }
+    }
+  }
+
+  .mainSection__containerForm {
+    position: relative;
+    max-width: 700px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    margin-top: 210px;
+    margin-right: 275px;
+    align-items: center;
+    transition: 2s;
+    @include tablet {
+      margin-top: 240px;
+      margin-right: 120px;
+    }
+    @include mobile{
+      margin-right: 0;
+    }
+
+    h1 {
+      font-size:calc(20px + 6 * ((100vw - 320px) / 680));
+      height: 107px;
+      text-align: center;
+      line-height: 140%;
+    }
+
+    .decoration {
+      width: 253px;
+      height: 33px;
+      margin-top: 25px;
+      margin-bottom: 65px;
+    }
+  }
+  &__paragraph {
+    margin-top: 19.2px;
+    font-size:calc(20px + 6 * ((100vw - 320px) / 680));
+    font-weight: 200;
+  }
+  &__fourSteps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__element{
+      width: 150px;
+      height: 150px;
+      margin-top: 51.6px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      border: 0.75px solid black;
+      rotate: 45deg;
+      margin-right: 25px;
+      transition: 2s;
+      @include tablet{
+        width: 100px;
+        height: 100px;
+      }
+      @include mobile {
+        width: 60px;
+        height: 60px;
+        margin-right: 10px;
+
+      }
+    }
+    &__text {
+      height: 220px;
+      width: 120px;
+      rotate: -45deg;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: 2s;
+      @include tablet {
+        height: 220px;
+      }
+    }
+    h2 {
+      font-size:calc(12px + 5 * ((100vw - 320px) / 680));
+      color: black;
+    }
+  }
+}

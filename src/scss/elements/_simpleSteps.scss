@@ -1,0 +1,257 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.simpleSteps {
+  margin-top: 55px;
+
+  .wrapper {
+
+  }
+
+  .simpleSteps__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+    h4 {
+      font-size: calc(15px + 5 * ((100vw - 320px) / 680));
+      color: $color-five;
+    }
+  }
+
+  .simpleSteps__decoration {
+    margin-top: 25px;
+    margin-bottom: 34px;
+  }
+}
+
+.simpleSteps__content {
+  display: flex;
+  width: 100%;
+  height: 325px;
+  align-items: center;
+  background-color: #F0F1F1;
+  padding: 0 150px;
+  transition: 1s;
+  @include tablet {
+    padding: 0 50px;
+  }
+  @include mobile {
+    padding: 0 25px;
+  }
+
+  .simpleSteps__firstContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    .simpleSteps__icon1 {
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      transition: 1s;
+      @include mobile {
+        width: 50%;
+        margin-top: 15px;
+      }
+    }
+
+    .simpleSteps__header {
+      font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+      margin-top: 8px;
+      text-align: center;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+      visibility: visible;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+    }
+  }
+
+  .simpleSteps__secContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    .simpleSteps__icon2 {
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      transition: 1s;
+      @include mobile {
+        width: 40%;
+        margin-top: 15px;
+      }
+    }
+
+    .simpleSteps__header {
+      font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+      margin-top: 8px;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+      visibility: visible;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+    }
+  }
+
+  .simpleSteps__thirdContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    .simpleSteps__icon3 {
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      transition: 1s;
+      @include mobile {
+        width: 50%;
+        margin-top: 15px;
+      }
+    }
+
+    .simpleSteps__header {
+      font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+      margin-top: 8px;
+      text-align: center;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+      visibility: visible;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+    }
+  }
+
+  .simpleSteps__fourContent {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+
+    .simpleSteps__icon4 {
+      max-width: 83px;
+      max-height: 83px;
+      height: auto;
+      width: 100%;
+      transition: 1s;
+      transition: 1s;
+      @include mobile {
+        width: 40%;
+        margin-top: 15px;
+      }
+    }
+
+    .simpleSteps__header {
+      font-size: calc(15px + 2 * ((100vw - 320px) / 680));
+      margin-top: 8px;
+
+    }
+
+    span {
+      margin-top: 9px;
+      margin-bottom: 9px;
+      width: 100px;
+      height: 1px;
+      background-color: $color-five;
+      visibility: visible;
+    }
+
+    .simpleSteps__text {
+      text-align: center;
+      color: $color-five;
+      font-size: calc(12px + 2 * ((100vw - 320px) / 680));
+    }
+  }
+  .simpleSteps__content__firstCont{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-right: 10%;
+    transition: 1s;
+    @include tablet {
+      margin-right: 2%;
+    }
+    @include mobile {
+      margin-right: 0;
+      flex-direction: column;
+    }
+  }
+  .simpleSteps__content__secCont {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    transition: 1s;
+    @include mobile {
+      flex-direction: column;
+    }
+  }
+}
+.big-btn {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  width: 300px;
+  height: 120px;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFFFF;
+  font-size: 36px;
+  color: #3C3C3C;
+  font-weight: 100;
+  margin-top: 35px;
+  margin-bottom: 80px;
+  transition: 1s;
+  @include tablet {
+    width: 25vw;
+    height: 10vh;
+  }
+}

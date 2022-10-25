@@ -1,0 +1,127 @@
+@import "../settings/fonts";
+@import "../settings/mixins";
+@import "../settings/colors";
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+.mainSection {
+
+  .wrapper {
+    display: flex;
+    justify-content: flex-end;
+    position: relative;
+
+    .mainSection_img {
+      position: absolute;
+      background-image: url("../../assets/Home-Hero-Image.jpg");
+      bottom: -200px;
+      left: 0;
+      z-index: 1;
+      background-size: cover;
+      background-position: right;
+      width: 885px;
+      max-width: 100%;
+      height: 900px;
+      transition: 1s;
+
+    }
+
+    @include tablet {
+      scale: 0.9;
+      bottom: -50px;
+      right: 50px;
+      background-position: center;
+      background-size: auto;
+    }
+    @include mobile {
+      background-size: auto;
+    }
+
+  }
+
+  .mainSection__container {
+    width: 32vw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    z-index: 2;
+    margin-top: 210px;
+    margin-right: 275px;
+    align-items: center;
+    transition: 1s;
+    @include tablet {
+      margin-top: 110px;
+      margin-right: 10px;
+      width: 40vw;
+    }
+    @include mobile {
+      margin-top: 25px;
+      margin-right: 0;
+      left: 40px;
+      top: -30px;
+    }
+
+    h1 {
+      font-size:calc(18px + 5 * ((100vw - 320px) / 680));
+      height: 107px;
+      text-align: center;
+      line-height: 140%;
+
+    }
+
+    .decoration {
+      width: 253px;
+      height: 33px;
+      margin-top: 25px;
+      margin-bottom: 65px;
+    }
+  }
+
+  .button__container {
+    display: flex;
+    margin-right: 10px;
+
+
+    .button__container__btn {
+      font-family: 'Open Sans', sans-serif;
+      display: flex;
+      width: 300px;
+      height: 120px;
+      justify-content: center;
+      align-items: center;
+      background-color: #FFFFFF;
+      font-size: calc(36px + 6 * ((100vw - 320px) / 680));
+      color: #3C3C3C;
+      font-weight: lighter;
+      transition: 1s;
+      @include tablet {
+        width: 25vw;
+        height: 10vh;
+        font-size: calc(20px + 6 * ((110vw - 320px) / 680));
+
+      }
+      @include mobile {
+        flex-direction: row;
+      }
+
+      &:first-child {
+        margin-right: 40px;
+      }
+    }
+  }
+
+  a {
+    transition: 1s;
+    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+
+    @include tablet {
+      font-size: calc(15px + 9 * ((110vw - 320px) / 680));
+    }
+    @include mobile {
+      font-size: calc(12px + 9 * ((110vw - 320px) / 680));
+    }
+  }
+}
+
+span {
+  visibility: hidden;
+}
