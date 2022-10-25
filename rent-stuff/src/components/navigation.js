@@ -20,19 +20,19 @@ const Navigation = () => {
                             <div className='navigation__list__container__first'>
                                 <li className='list__item__login'>
                                     <div className='list__link__login'>
-                                        <Link className='navigation__login__login' to="/Login"> Zaloguj</Link>
+                                        <Link className='navigation__login__login' to="/Rent_the_stuff/Login"> Zaloguj</Link>
                                     </div>
                                 </li>
                                 <li className='list__item__login'>
                                     <div className='list__link__login'>
-                                        <Link className='navigation__login__register' to="/Register"> Załóż konto</Link>
+                                        <Link className='navigation__login__register' to="/Rent_the_stuff/Register"> Załóż konto</Link>
                                     </div>
                                 </li>
                             </div>
                             <div className='navigation__list__container__sec'>
                             <li className='list__item'>
                                 <div className='list__link'>
-                                    <Link className='list__item__sec' to='/'>Start</Link>
+                                    <Link className='list__item__sec' to='/Rent_the_stuff'>Start</Link>
                                 </div>
                             </li>
                             <li className='list__item'>

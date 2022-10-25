@@ -58,7 +58,7 @@ const LoginSection = () => {
 
             signInWithEmailAndPassword(auth, form.email, form.password)
                 .then((auth) => {
-                    navigate('/UserLoginInHome')
+                    navigate('/Rent_the_stuff/UserLoginInHome')
                 })
                 .catch(error => console.error(error))
         }
@@ -117,7 +117,7 @@ const LoginSection = () => {
                         </div>
                     </form>
                     <div className='login__register'>
-                        <button className='login__btn'><Link to="/Register">Załóż konto</Link></button>
+                        <button className='login__btn'><Link to="/Rent_the_stuff/Register">Załóż konto</Link></button>
                         <button className='login__btn' onClick={handleSubmit}>Zaloguj się</button>
                     </div>
                 </div>

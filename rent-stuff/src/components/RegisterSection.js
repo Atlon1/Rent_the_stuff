@@ -71,7 +71,7 @@ const RegisterSection = () => {
         } else {
             createUserWithEmailAndPassword(auth, form.email, form.password)
                 .then((auth) => {
-                    navigate('/UserLoginInHome')
+                    navigate('/Rent_the_stuff/UserLoginInHome')
                 })
                 .catch(error => console.error(error))
                 if (!console.error.length < 0 ) {setPasswordReErr('Takie konto już istnieje!')}
@@ -153,7 +153,7 @@ const RegisterSection = () => {
                         </div>
                     </form>
                     <div className='register__register'>
-                        <button className='register__btn'><Link to="/Login">Zaloguj się</Link></button>
+                        <button className='register__btn'><Link to="/Rent_the_stuff/Login">Zaloguj się</Link></button>
                         <button className='register__btn' onClick={handleSubmit}>Załóż konto</button>
                     </div>
                 </div>

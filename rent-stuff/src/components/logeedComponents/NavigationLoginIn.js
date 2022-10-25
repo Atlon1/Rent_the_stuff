@@ -13,7 +13,7 @@ const NavigationLoginIn = () => {
     const [user, loading, error] = useAuthState(auth);
     const signOutClick = () => {
         auth.signOut();
-        navigate('/Wylogowano')
+        navigate('/Rent_the_stuff/Wylogowano')
     }
 
     return (
@@ -45,7 +45,7 @@ const NavigationLoginIn = () => {
                             <div className='navigation__list__container__sec'>
                                 <li className='list__item'>
                                     <div className='list__link'>
-                                        <Link className='list__item__sec' to='/UserLoginInHome'>Start</Link>
+                                        <Link className='list__item__sec' to='/Rent_the_stuff/UserLoginInHome'>Start</Link>
                                     </div>
                                 </li>
                                 <li className='list__item'>

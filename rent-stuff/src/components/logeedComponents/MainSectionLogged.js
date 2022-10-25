@@ -35,8 +35,8 @@ const MainSectionLogged = () => {
                     <h1 ref={firstRef}> Zacznij pomagać! <br/>Oddaj niechciane rzeczy w zaufane ręce</h1>
                     <img className='decoration' src={decoration} alt='decoration'/>
                     <div className='button__container'>
-                        <button className="button__container__btn"><Link to="/UserLoginInHome/FormSection">ODDAJ<br/>RZECZY</Link></button>
-                        <button className="button__container__btn"><Link to="/UserLoginInHome/FormSection">ZORGANIZUJ<br/>ZBIÓRKĘ</Link></button>
+                        <button className="button__container__btn"><Link to="/Rent_the_stuff/UserLoginInHome/FormSection">ODDAJ<br/>RZECZY</Link></button>
+                        <button className="button__container__btn"><Link to="/Rent_the_stuff/UserLoginInHome/FormSection">ZORGANIZUJ<br/>ZBIÓRKĘ</Link></button>
                     </div>
                 </div>
             </div>

@@ -337,7 +337,7 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
     }
 
     &__btn {
-      margin-left: 50px;
+      margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
       height: 79px;
@@ -411,13 +411,15 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
     &__container {
       display: flex;
       margin-left: 142px;
+      margin-bottom: 160px;
       transition: 1s;
       @include tablet {
         margin-left: 25px;
-        margin-bottom: 25px;
+        margin-bottom: 160px;
       }
       @include mobile {
         flex-direction: column;
+        margin-bottom: 40px;
       }
     }
 
@@ -473,7 +475,7 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
 
 
     &__btn {
-      margin-left: 50px;
+      margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
       height: 79px;
@@ -482,7 +484,7 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
       font-size: $font-header-size;
       font-weight: 200;
       transition: 1s;
-      @include tablet {
+      @include tablet{
         margin-left: 25px;
         max-width: 120px;
         max-height: 60px;
@@ -568,12 +570,14 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
     &__container {
       display: flex;
       margin-left: 142px;
+      margin-bottom: 160px;
       transition: 1s;
       @include tablet{
         margin-left: 25px;
       }
       @include mobile {
         flex-direction: column;
+        margin-bottom: 40px;
       }
     }
 
@@ -632,7 +636,7 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
 
 
     &__btn {
-      margin-left: 50px;
+      margin-left: 142px;
       margin-bottom: 50px;
       width: 180px;
       height: 79px;
@@ -641,7 +645,7 @@ $font-text-size: calc(15px + 2 * ((100vw - 320px) / 680));
       font-size: $font-header-size;
       font-weight: 200;
       transition: 1s;
-      @include tablet {
+      @include tablet{
         margin-left: 25px;
         max-width: 120px;
         max-height: 60px;

@@ -12,7 +12,7 @@ const WylogowanoSection = () => {
                     <div className='wylogowano__title'>Wylogowano nastąpiło pomyślnie!</div>
                     <img src={decoration} className='wylogowano__decoration' alt='decoration'/>
                     <div className='wylogowano__register'>
-                        <button className='wylogowano__btn'><Link to="/">Strona główna</Link></button>
+                        <button className='wylogowano__btn'><Link to="/Rent_the_stuff">Strona główna</Link></button>
                     </div>
                 </div>
             </div>

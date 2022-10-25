@@ -13,12 +13,12 @@ export default function App () {
   return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<Home/>}/>
-                <Route path='/Login' element={<Login/>}/>
-                <Route path='/Register' element={<Register/>}/>
-                <Route path='/UserLoginInHome' element={<UserLoginInHome/>}/>
-                <Route path='/Wylogowano' element={<Wylogowano/>}/>
-                <Route path='/UserLoginInHome/FormSection' element={<FormSectionLogged/>}/>
+                <Route path='/Rent_the_stuff/' element={<Home/>}/>
+                <Route path='/Rent_the_stuff/Login' element={<Login/>}/>
+                <Route path='/Rent_the_stuff/Register' element={<Register/>}/>
+                <Route path='/Rent_the_stuff/UserLoginInHome' element={<UserLoginInHome/>}/>
+                <Route path='/Rent_the_stuff/Wylogowano' element={<Wylogowano/>}/>
+                <Route path='/Rent_the_stuff/UserLoginInHome/FormSection' element={<FormSectionLogged/>}/>
             </Routes>
       </BrowserRouter>
   )

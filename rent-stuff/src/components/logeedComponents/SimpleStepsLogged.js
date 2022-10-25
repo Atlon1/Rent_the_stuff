@@ -55,7 +55,7 @@ const SimpleStepsLogged = () => {
                             </div>
                         </div>
                     </div>
-                    <button data-aos="flip-left" className="big-btn"><Link to="/UserLoginInHome/FormSection">ODDAJ<br/>RZECZY</Link></button>
+                    <button data-aos="flip-left" className="big-btn"><Link to="/Rent_the_stuff/UserLoginInHome/FormSection">ODDAJ<br/>RZECZY</Link></button>
                 </div>
             </div>
         </section>
