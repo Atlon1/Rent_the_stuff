@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Rent_the_stuff/static/css/main.079a1067.css",
+    "main.css": "/Rent_the_stuff/static/css/main.76ed7820.css",
     "main.js": "/Rent_the_stuff/static/js/main.b6b7702d.js",
     "static/media/3 Columns Background.png": "/Rent_the_stuff/static/media/3 Columns Background.54dcd134c6b5241e5fbc.png",
     "static/media/Background-Contact-Form.jpg": "/Rent_the_stuff/static/media/Background-Contact-Form.655c54427d3b66427460.jpg",
@@ -17,11 +17,11 @@
     "static/media/Signature.svg": "/Rent_the_stuff/static/media/Signature.8f2a001d56e8f7d883e166ac3cc69892.svg",
     "static/media/Decoration.svg": "/Rent_the_stuff/static/media/Decoration.aad75271e33dd889f25b0e24a5e6c0b2.svg",
     "index.html": "/Rent_the_stuff/index.html",
-    "main.079a1067.css.map": "/Rent_the_stuff/static/css/main.079a1067.css.map",
+    "main.76ed7820.css.map": "/Rent_the_stuff/static/css/main.76ed7820.css.map",
     "main.b6b7702d.js.map": "/Rent_the_stuff/static/js/main.b6b7702d.js.map"
   },
   "entrypoints": [
-    "static/css/main.079a1067.css",
+    "static/css/main.76ed7820.css",
     "static/js/main.b6b7702d.js"
   ]
 }
