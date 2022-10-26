@@ -55,7 +55,7 @@
     }
     @include mobile {
       margin-top: 25px;
-      margin-right: 0;
+      margin-right: 50px;
       left: 40px;
       top: -30px;
     }
@@ -73,6 +73,10 @@
       height: 33px;
       margin-top: 25px;
       margin-bottom: 65px;
+      @include mobile {
+        width: 180px;
+        margin-top: 75px;
+      }
     }
   }
 
@@ -81,21 +85,23 @@
     margin-right: 10px;
 
 
+
     .button__container__btn {
       font-family: 'Open Sans', sans-serif;
       display: flex;
-      width: 300px;
-      height: 120px;
+      max-width: 300px;
+      max-height: 120px;
+      width: 100%;
+      height: 100%;
+      padding: 10px 25px;
       justify-content: center;
       align-items: center;
       background-color: #FFFFFF;
-      font-size: calc(36px + 6 * ((100vw - 320px) / 680));
+      font-size: calc(30px + 6 * ((100vw - 320px) / 680));
       color: #3C3C3C;
       font-weight: lighter;
       transition: 1s;
       @include tablet {
-        width: 25vw;
-        height: 10vh;
         font-size: calc(20px + 6 * ((110vw - 320px) / 680));
 
       }
@@ -105,13 +111,14 @@
 
       &:first-child {
         margin-right: 40px;
+        padding: 10px 40px;
       }
     }
   }
 
   a {
     transition: 1s;
-    font-size: calc(20px + 6 * ((100vw - 320px) / 680));
+    font-size: calc(20px + 4 * ((100vw - 320px) / 680));
 
     @include tablet {
       font-size: calc(15px + 9 * ((110vw - 320px) / 680));
