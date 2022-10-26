@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Rent_the_stuff/static/css/main.76ed7820.css",
-    "main.js": "/Rent_the_stuff/static/js/main.b6b7702d.js",
+    "main.js": "/Rent_the_stuff/static/js/main.da90664f.js",
     "static/media/3 Columns Background.png": "/Rent_the_stuff/static/media/3 Columns Background.54dcd134c6b5241e5fbc.png",
     "static/media/Background-Contact-Form.jpg": "/Rent_the_stuff/static/media/Background-Contact-Form.655c54427d3b66427460.jpg",
     "static/media/Form-Hero-Image.jpg": "/Rent_the_stuff/static/media/Form-Hero-Image.75cd77265f1736b72327.jpg",
@@ -18,10 +18,10 @@
     "static/media/Decoration.svg": "/Rent_the_stuff/static/media/Decoration.aad75271e33dd889f25b0e24a5e6c0b2.svg",
     "index.html": "/Rent_the_stuff/index.html",
     "main.76ed7820.css.map": "/Rent_the_stuff/static/css/main.76ed7820.css.map",
-    "main.b6b7702d.js.map": "/Rent_the_stuff/static/js/main.b6b7702d.js.map"
+    "main.da90664f.js.map": "/Rent_the_stuff/static/js/main.da90664f.js.map"
   },
   "entrypoints": [
     "static/css/main.76ed7820.css",
-    "static/js/main.b6b7702d.js"
+    "static/js/main.da90664f.js"
   ]
 }
