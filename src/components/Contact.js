@@ -122,7 +122,7 @@ const Contact = () => {
                 <div className='contact__container'>
                     <div className='contact__background'/>
                     <div data-aos='slide-right' className='contact__content'>
-                        <h6>Skontaktuj się z nami</h6>
+                        <h6>Skontaktuj się z nami..</h6>
                         <img src={decoration} className='contact__decoration' alt='decoration'/>
                         {agree}
                         <form className='contact__inputCont'>
@@ -134,7 +134,7 @@ const Contact = () => {
                                              margin: "8px"
                                          }
                                      }>
-                                    <label>Wpisz sowje imię</label><input
+                                    <label>Wpisz swoje imię:</label><input
                                     placeholder="Maciej"
                                     type="text"
                                     name="name"
@@ -156,7 +156,7 @@ const Contact = () => {
                                              margin: "8px"
                                          }
                                      }>
-                                    <label>Wpisz swój email</label><input
+                                    <label>Wpisz swój email:</label><input
                                     placeholder="abc@yx.pl"
                                     type="email"
                                     name="email"
@@ -178,7 +178,7 @@ const Contact = () => {
                                          borderBottom: (!textErr ? "1px solid black" : borderColor),
                                      }
                                  }>
-                                <label>Wpisz swoją wiadomość</label>
+                                <label>Wpisz swoją wiadomość:</label>
                                 <textarea
                                     placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
                                     name="text"

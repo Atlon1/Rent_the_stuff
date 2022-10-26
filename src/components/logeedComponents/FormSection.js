@@ -107,7 +107,7 @@ const FormSection = () => {
     const [whoHelp, setWhoHelp] = useState("");
     const [curentOrg, setCurentOrg] = useState("");
     const [yellowHeader, setYellowHeader] = useState("Ważne!");
-    const [yellowPara, setYellowPara] = useState("Uzupłenij szczegóły dotczące Twoich rzeczy. Dzięki temu\n" +
+    const [yellowPara, setYellowPara] = useState("Uzupłenij szczegóły dotyczące Twoich rzeczy. Dzięki temu\n" +
         "                        będziemy wiedzieć komu najlepiej je przekazać.");
     const [street, setStreet] = useState("");
     const [city, setCity] = useState("");
@@ -310,30 +310,30 @@ const FormSection = () => {
                     <label className='form__pageOne__radio'><input type='radio'
                                                                    name='stuff'
                                                                    value='Ubrania, które nadaja sie do
-                            ponownego użycia'
+                            ponownego użycia,'
                                                                    onChange={e => setRadio(e.target.value)}
                     />Ubrania, które nadaja sie do
-                        ponownego użycia</label>
+                        ponownego użycia,</label>
                     <label className='form__pageOne__radio'><input type='radio'
                                                                    name='stuff'
-                                                                   value='Ubrania, do wyrzucenia'
+                                                                   value='Ubrania, do wyrzucenia,'
                                                                    onChange={e => setRadio(e.target.value)}
-                    />Ubrania, do wyrzucenia</label>
+                    />Ubrania, do wyrzucenia,</label>
                     <label className='form__pageOne__radio'><input type='radio'
                                                                    name='stuff'
-                                                                   value='zabawki'
+                                                                   value='zabawki,'
                                                                    onChange={e => setRadio(e.target.value)}
-                    />zabawki</label>
+                    />zabawki,</label>
                     <label className='form__pageOne__radio'><input type='radio'
                                                                    name='stuff'
-                                                                   value='książki'
+                                                                   value='książki,'
                                                                    onChange={e => setRadio(e.target.value)}
-                    />książki</label>
+                    />książki,</label>
                     <label className='form__pageOne__radio'><input type='radio'
                                                                    name='stuff'
-                                                                   value='Inne'
+                                                                   value='Inne..'
                                                                    onChange={e => setRadio(e.target.value)}
-                    />Inne</label>
+                    />Inne..</label>
                 </form>
                 <div className='form__pageOne__validation'>{radioErr}</div>
                 <button className="form__pageOne__btn" style={
@@ -447,7 +447,7 @@ const FormSection = () => {
                 }
             }>
                 <div className='form__pageFour__steps'> Krok 4/4</div>
-                <div className='form__pageFour__header'>Podaj adres oraz termin odbioru rzeczy przez kuriera</div>
+                <div className='form__pageFour__header'>Podaj adres oraz termin odbioru rzeczy przez kuriera.</div>
                 <div className='form__pageFour__container'>
                     <div className='form__pageFour__firstTable'>
                         <div className='form__pageFour__text'>Adres odbioru:</div>

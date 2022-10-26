@@ -69,7 +69,7 @@ const LoginSection = () => {
         <section className='login'>
             <div className='wrapper'>
                 <div className='login__container'>
-                    <div className='login__title'>Zaloguj się</div>
+                    <div className='login__title'>Zaloguj się:</div>
                     <img src={decoration} className='login__decoration' alt='decoration'/>
                     <form className='login__form'>
                         <div className='login__email'
